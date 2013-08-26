@@ -199,7 +199,7 @@
 (global-set-key (kbd "M-<f8>") 'flyspell-prog-mode)
 (global-set-key (kbd "C-<f8>") 'ispell-word)
 (global-set-key (kbd "S-<f8>") 'ispell-change-dictionary)
-(global-set-key (kbd "\C-x-") 'comment-dwim)
+(global-set-key (kbd "C-c c") 'comment-dwim)
 ;;; Eshell
 (global-set-key (kbd "\C-xt") 'eshell)
 

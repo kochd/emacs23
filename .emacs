@@ -84,9 +84,9 @@
 (global-smart-tab-mode t)
 
 ;; Comment in Bash
-(add-hook 'sh-mode-hook
-          (lambda ()
-             (define-key sh-mode-map "\C-c\C-c" 'comment-region)))
+;; (add-hook 'sh-mode-hook
+;;           (lambda ()
+;;              (define-key sh-mode-map "\C-c\C-c" 'comment-region)))
 
 ;; uniquify
 (require 'uniquify)
@@ -183,8 +183,8 @@
 (global-set-key [(shift insert)] 'clipboard-yank)
 
 ;; Comany-mode
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
+;; (require 'company)
+;; (add-hook 'after-init-hook 'global-company-mode)
 
 ;;; Flyspell/Ispell
 (require 'auto-dictionary)

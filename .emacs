@@ -195,6 +195,8 @@
 ;; Keybindings ;;
 ;;;;;;;;;;;;;;;;;
 
+(global-set-key (kbd "C-c SPC") 'ace-jump-buffer)
+
 (global-set-key (kbd "<f8>") 'flyspell-mode)
 (global-set-key (kbd "M-<f8>") 'flyspell-prog-mode)
 (global-set-key (kbd "C-<f8>") 'ispell-word)

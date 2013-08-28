@@ -204,10 +204,10 @@
 (global-set-key (kbd "\C-xt") 'eshell)
 
 ;;; Resize windows
-;;(key-chord-define-global "hl"     'enlarge-window-horizontally)
-;;(key-chord-define-global "hs"     'shrink-window-horizontally)
-;;(key-chord-define-global "vl"     'enlarge-window-horizontally)
-;;(key-chord-define-global "vs"     'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 ;; redo+
 (require 'redo+)

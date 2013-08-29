@@ -72,6 +72,26 @@
 ;; Settings and Modes ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; ,----
+;; | Org-Mode
+;; `----
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (sh . t)
+   (python . t)
+   (R . t)
+   (ruby . t)
+   (ditaa . t)
+   (dot . t)
+   (octave . t)
+   (sqlite . t)
+   (perl . t)
+   (C . t)
+   ))
+
+
 ;Yasnippet
 (yas-global-mode t)
 
@@ -201,7 +221,7 @@
 (global-set-key (kbd "M-<f8>") 'flyspell-prog-mode)
 (global-set-key (kbd "C-<f8>") 'ispell-word)
 (global-set-key (kbd "S-<f8>") 'ispell-change-dictionary)
-(global-set-key (kbd "C-c c") 'comment-dwim)
+(global-set-key (kbd "C-c -") 'comment-dwim)
 ;;; Eshell
 (global-set-key (kbd "\C-xt") 'eshell)
 

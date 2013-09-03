@@ -59,13 +59,13 @@
 ;;Force colors ignoring the theme
 ;;e.g. background to be transparent
 ;(set-face-foreground 'default "white")
-(set-face-background 'default " ")           ; Color of background
+;(set-face-background 'default " ")           ; Color of background
 ;(set-face-background 'region  "red")       ; Region color
-(set-face-background 'hl-line "green")   ; hl-line color
-(set-face-background 'col-highlight "green") ; col-line color
+;(set-face-background 'hl-line "green")   ; hl-line color
+(set-face-background 'col-highlight "#303030") ; col-line color
 
     (require 'parenface)
-    (set-face-foreground 'paren-face "blue")
+    (set-face-foreground 'paren-face "#cc6666")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;

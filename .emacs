@@ -22,10 +22,6 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/savepalce/"))
 
 ;;;;; Packages
-(when
-    (load
-     (expand-file-name "~/.emacs.d/elpa/package.el"))
-  (package-initialize))
 
 ;; Other archives
 (require 'package)

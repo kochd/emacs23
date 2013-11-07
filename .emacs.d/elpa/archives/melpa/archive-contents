@@ -304,6 +304,9 @@
  (vcl-mode .
 	   [(20121129 2114)
 	    nil "Syntax highlighting for Varnish Command Language [github]" single])
+ (vc-darcs .
+	   [(20090617 1305)
+	    nil "a VC backend for darcs [darcs]" single])
  (vc-check-status .
 		  [(20130814 1422)
 		   nil "Warn you when quitting emacs and leaving repo dirty. [github]" tar])
@@ -669,7 +672,7 @@
 			[(20130414 1635)
 			 nil "Finnish holidays for Emacs calendar. [github]" single])
  (sunny-day-theme .
-		  [(20131105 1332)
+		  [(20131107 1751)
 		   nil "Emacs24 theme with a light background. [github]" single])
  (summarye .
 	   [(20130328 1027)
@@ -903,10 +906,8 @@
 	    [(20130513 1342)
 	     nil "File slideshow [github]" single])
  (slamhound .
-	    [(20130907 1251)
-	     ((nrepl
-	       (0)))
-	     "Rip Clojure namespaces apart and rebuild them. [github]" single])
+	    [(20131107 927)
+	     nil "Rip Clojure namespaces apart and rebuild them. [github]" single])
  (skewer-mode .
 	      [(20130925 1123)
 	       ((simple-httpd
@@ -1641,6 +1642,9 @@
 		   (emacs
 		    (24)))
 		  "A Password manager for Emacs. [github]" single])
+ (parse-csv .
+	    [(20131107 2100)
+	     nil "Parse strings with CSV fields into s-expressions [github]" single])
  (parenface .
 	    [(20091203 1917)
 	     nil "Provide a face for parens in lisp modes. [github]" single])
@@ -1816,7 +1820,7 @@
 		 (7)))
 	       "Minimalist presentation minor-mode for Emacs org-mode. [github]" single])
  (org-pomodoro .
-	       [(20131107 118)
+	       [(20131107 1452)
 		((alert
 		  (0 5 10)))
 		"Pomodoro implementation for org-mode. [github]" tar])
@@ -2014,7 +2018,7 @@
 	  [(20130723 2350)
 	   nil "Extensions to `novice.el'. [wiki]" single])
  (notmuch .
-	  [(20131027 1735)
+	  [(20131107 801)
 	   nil "No description available. [git]" tar])
  (nose .
        [(20110804 819)
@@ -2828,7 +2832,7 @@
 	      [(20121016 957)
 	       nil "convert english words between singular and plural [github]" single])
  (inf-ruby .
-	   [(20131107 123)
+	   [(20131107 1319)
 	    nil "Run a Ruby process in a buffer [github]" single])
  (inf-php .
 	  [(20130414 1621)
@@ -3066,7 +3070,7 @@
 		 (1 0)))
 	       "Color theme selection with helm interface [github]" single])
  (helm-swoop .
-	     [(20131105 1711)
+	     [(20131108 26)
 	      ((helm
 		(1 0))
 	       (emacs
@@ -3263,7 +3267,7 @@
 	    (20120509)))
 	  "helm-sources and some utilities for GNU R. [github]" single])
  (helm .
-       [(20131106 1604)
+       [(20131107 1158)
 	nil "Helm is an Emacs incremental and narrowing framework [github]" tar])
  (header2 .
 	  [(20130824 1159)
@@ -4144,7 +4148,7 @@
 	 [(20131025 906)
 	  nil "Erlang major mode [github]" tar])
  (ergoemacs-mode .
-		 [(20131106 2356)
+		 [(20131107 827)
 		  nil "Emacs mode based on common modern software interface and ergonomics. [github]" tar])
  (erefactor .
 	    [(20130521 1838)
@@ -4768,7 +4772,7 @@
 			(1 5)))
 		      "Jump to cucumber step definition [github]" single])
  (ctags-update .
-	       [(20130703 23)
+	       [(20131107 1749)
 		nil "(auto) update TAGS in parent directory using exuberant-ctags [github]" single])
  (ctags .
 	[(20110911 1204)
@@ -5516,9 +5520,6 @@
 	     (request
 	      (0 2 0)))
 	    "Open and evaluate 4clojure.com questions [github]" single])
- (vc-darcs .
-	   [(20090617 1305)
-	    nil "a VC backend for darcs [darcs]" single])
  (minimap .
 	  [(20110427 1123)
 	   nil "Minimap sidebar for Emacs [git]" single]))

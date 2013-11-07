@@ -27,9 +27,9 @@
 (require 'package)
 ;; Any add to list for package-archives (to add marmalade or melpa) goes here
 ;; Marmalade works but not behind the stupid firewall at work
-;(add-to-list 'package-archives
-;    '("marmalade" .
-;      "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+    '("marmalade" .
+      "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
     '("melpa" .
       "http://melpa.milkbox.net/packages/"))

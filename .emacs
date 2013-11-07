@@ -67,7 +67,6 @@
     (require 'parenface)
     (set-face-foreground 'paren-face "#cc6666")
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Settings and Modes ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
@@ -161,11 +160,16 @@
 (col-highlight-set-interval 0.5) ; Interval till col-line is shown
 
 ;; Show paren brakets
-(show-paren-mode t)
+;;(show-paren-mode t)
+;; REPLACED
+(show-smartparens-global-mode t)
 
 ;; Nicer buffer switching whith completion
 (ido-mode t)
-(smex-initialize)
+(flx-ido-mode t)
+;;(ido-vertical-mode t)
+;;(smex-initialize)
+
 
 ;; Move mouse out of the screen when typing
 (mouse-avoidance-mode 'banish)
@@ -178,6 +182,7 @@
 
 ;;Enclose parens
 (enclose-global-mode)
+
 
 ;;;; Show whitespaces
 (global-whitespace-mode t)

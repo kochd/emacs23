@@ -71,6 +71,15 @@
 ;; Settings and Modes ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
+
+;; ,----
+;; | auto-dim-other-buffers
+;; `----
+(auto-dim-other-buffers-mode t)
+(set-face-background 'auto-dim-other-buffers-face "#000000")
+
+
+
 ;; ,----
 ;; | Org-Mode
 ;; `----
@@ -219,8 +228,8 @@
 ;;;;;;;;;;;;;;;;;
 ;; Keybindings ;;
 ;;;;;;;;;;;;;;;;;
-
 (global-set-key (kbd "C-c SPC") 'ace-jump-buffer)
+(global-set-key (kbd "<C-tab>") 'other-window)
 
 (global-set-key (kbd "<f8>") 'flyspell-mode)
 (global-set-key (kbd "M-<f8>") 'flyspell-prog-mode)
@@ -228,6 +237,7 @@
 (global-set-key (kbd "S-<f8>") 'ispell-change-dictionary)
 (global-set-key (kbd "C-c -") 'comment-dwim)
 ;;; Eshell
+
 (global-set-key (kbd "\C-xt") 'eshell)
 
 ;;; Resize windows
@@ -235,6 +245,8 @@
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
+
+
 
 ;; redo+
 (require 'redo+)
@@ -270,3 +282,15 @@
     )
    1)
   )
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(show-paren-mode t))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )

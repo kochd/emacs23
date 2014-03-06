@@ -2,6 +2,7 @@
 ;; add to your /etc/bash.bashrc: ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;(server-start)
 
 ;export TERM=xterm-256color
 ;em() { /usr/bin/emacsclient -t $1 || ( /usr/bin/emacs --daemon && emacsclient -t $1 ) }
@@ -18,23 +19,23 @@
 
 ;; Subdirs
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/move-text/"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/key-chord/"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/savepalce/"))
+
+
 
 ;;;;; Packages
 
 ;; Other archives
 (require 'package)
+
 ;; Any add to list for package-archives (to add marmalade or melpa) goes here
 ;; Marmalade works but not behind the stupid firewall at work
 (add-to-list 'package-archives
-    '("marmalade" .
-      "http://marmalade-repo.org/packages/"))
+       '("marmalade" .
+	 "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
-    '("melpa" .
-      "http://melpa.milkbox.net/packages/"))
-
-(package-initialize)
+       '("melpa" .
+	 "http://melpa.milkbox.net/packages/"))
+  (package-initialize)
 
 
 ;;;;;;;;;;;;
@@ -42,10 +43,9 @@
 ;;;;;;;;;;;;
 
 (require 'color-theme)
-
 (eval-after-load "color-theme"
   '(progn
-     (color-theme-initialize)
+;     (color-theme-initialize)
 ;     (color-theme-gray30)))
 ;     (color-theme-dark-laptop)))
      (color-theme-zenburn)))
@@ -58,10 +58,9 @@
 ;(set-face-background 'default " ")           ; Color of background
 ;(set-face-background 'region  "red")       ; Region color
 ;(set-face-background 'hl-line "green")   ; hl-line color
-(set-face-background 'col-highlight "#303030") ; col-line color
 
-    (require 'parenface)
-    (set-face-foreground 'paren-face "#cc6666")
+(set-face-background 'col-highlight "#303030") ; col-line color
+(set-face-foreground 'paren-face "#cc6666")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Settings and Modes ;;
@@ -113,23 +112,19 @@
 ;;              (define-key sh-mode-map "\C-c\C-c" 'comment-region)))
 
 ;; uniquify
-(require 'uniquify)
+;(require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
 ;; saveplace
 (setq save-place-file "~/.emacs.d/saveplace-save");; keep my ~/ clean
 (setq-default save-place t)                       ;; activate it for all buffers
-(require 'saveplace)                              ;; get the package)'))))"")
+;(require 'saveplace)                              ;; get the package)'))))"")
 
 ;; Follow symlinks
 (setq vc-follow-symlinks 1)
 
 ;; Move-Text
 (require 'move-text)
-
-;; key-chord
-(require 'key-chord)
-(key-chord-mode 1)
 
 ;; No Menubar
 (menu-bar-mode nil)
@@ -217,7 +212,7 @@
 ;; (add-hook 'after-init-hook 'global-company-mode)
 
 ;;; Flyspell/Ispell
-(require 'auto-dictionary)
+;(require 'auto-dictionary)
 (add-hook 'flyspell-mode-hook (lambda () (auto-dictionary-mode 1)))
 
 
@@ -245,7 +240,7 @@
 
 
 ;; redo+
-(require 'redo+)
+;(require 'redo+)
 (global-set-key (kbd "M-_") 'redo)
 (setq undo-no-redo t)
 

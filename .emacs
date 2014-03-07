@@ -19,23 +19,22 @@
 ;; Subdirs
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/move-text/"))
 
-
-
 ;;;;; Packages
 
 ;; Other archives
+(when (<= emacs-major-version 24)
+  (add-to-list 'load-path (expand-file-name "~/.emacs.d/package.el"))
+  (load (expand-file-name "~/.emacs.d/package.el"))
+)
+
 (require 'package)
-
-;; Any add to list for package-archives (to add marmalade or melpa) goes here
-;; Marmalade works but not behind the stupid firewall at work
 (add-to-list 'package-archives
-       '("marmalade" .
-	 "http://marmalade-repo.org/packages/"))
+	     '("marmalade" .
+	       "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
-       '("melpa" .
-	 "http://melpa.milkbox.net/packages/"))
-  (package-initialize)
-
+	     '("melpa" .
+	       "http://melpa.milkbox.net/packages/"))
+(package-initialize)
 
 ;;;;;;;;;;;;
 ;; Colors ;;

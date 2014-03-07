@@ -12,7 +12,6 @@
 ;And then use em instead of emacs for faster loading of emacs
 ;You can also use 'emacsclient -nw' instead of 'emacsclient -t' for non-X mode and have an alias for that.
 
-
 ;;;;;;;;;;;
 ;; Loads ;;
 ;;;;;;;;;;;
@@ -46,11 +45,13 @@
 (eval-after-load "color-theme"
   '(progn
 ;     (color-theme-initialize)
-;     (color-theme-gray30)))
-;     (color-theme-dark-laptop)))
-     (color-theme-zenburn)))
+;     (color-theme-gray30)
+;     (color-theme-dark-laptop)
+;     (color-theme-zenburn)))
+      (color-theme-molokai)))
 ;     (color-theme-arjen)
 ;     (color-theme-solarized-dark)
+
 
 ;;Force colors ignoring the theme
 ;;e.g. background to be transparent
@@ -60,7 +61,13 @@
 ;(set-face-background 'hl-line "green")   ; hl-line color
 
 (set-face-background 'col-highlight "#303030") ; col-line color
-(set-face-foreground 'paren-face "#cc6666")
+;(set-face-foreground 'paren-face "#cc6666")
+
+;; ,----
+;; | Font
+;; `----
+(set-face-attribute 'default nil :height 80 :family "Droid Sans Mono" )
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Settings and Modes ;;

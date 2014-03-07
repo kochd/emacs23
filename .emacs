@@ -93,7 +93,9 @@
 
 
 ;Yasnippet
-(yas-global-mode t)
+(when (>= emacs-major-version 24)
+	  (yas-global-mode t)
+)
 
 ;Auto-Complete
 (auto-complete t)

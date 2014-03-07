@@ -226,17 +226,16 @@
 (global-set-key (kbd "C-<f8>") 'ispell-word)
 (global-set-key (kbd "S-<f8>") 'ispell-change-dictionary)
 (global-set-key (kbd "C-c -") 'comment-dwim)
-;;; Eshell
 
-(global-set-key (kbd "\C-xt") 'eshell)
+;;; Eshell
+(global-set-key (kbd "<f1>") 'ansi-term)
+
 
 ;;; Resize windows
-(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-<down>") 'shrink-window)
-(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+(global-set-key (kbd "S-C-<down>") 'windresize)
 
-
+;;; Other windows
+(global-set-key (kbd "C-o") 'other-window)
 
 ;; redo+
 ;(require 'redo+)

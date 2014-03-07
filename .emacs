@@ -18,6 +18,9 @@
 
 ;; Subdirs
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/move-text/"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/opsi-mode/"))
+(require 'opsi-mode)
+
 
 ;;;;; Packages
 
@@ -57,7 +60,7 @@
 ;(set-face-foreground 'default "white")
 ;(set-face-background 'default " ")           ; Color of background
 ;(set-face-background 'region  "red")       ; Region color
-;(set-face-background 'hl-line "green")   ; hl-line color
+(set-face-background 'hl-line "#111111")   ; hl-line color
 
 (set-face-background 'col-highlight "#303030") ; col-line color
 ;(set-face-foreground 'paren-face "#cc6666")
@@ -71,6 +74,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Settings and Modes ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; ,----
+;; | OPSI-Mode
+;; `----
+
+(add-to-list 'auto-mode-alist '("\\.opsi*\\'" . opsi-mode))
+
+
 
 ;; ,----
 ;; | Org-Mode

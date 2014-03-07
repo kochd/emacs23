@@ -297,3 +297,8 @@
     (byte-compile-file buffer-file-name)))
 
 (add-hook 'after-save-hook 'byte-compile-current-buffer)
+
+;; ,----
+;; | Recompile .emacs.d every start
+;; `----
+;(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)

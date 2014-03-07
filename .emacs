@@ -193,7 +193,7 @@
 			       empty
 			       face
 ;			       lines
-			       lines-tail
+;			       lines-tail
 			       space-after-tab
 			       space-before-tab
 			       trailing
@@ -228,7 +228,7 @@
 (global-set-key (kbd "C-c -") 'comment-dwim)
 
 ;;; Eshell
-(global-set-key (kbd "<f1>") 'ansi-term)
+(global-set-key (kbd "<f1>") 'eshell)
 
 
 ;;; Resize windows

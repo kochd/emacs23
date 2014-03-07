@@ -134,10 +134,10 @@
 (require 'move-text)
 
 ;; No Menubar
-(menu-bar-mode nil)
+(menu-bar-mode -1)
 
 ;; No Toolbar
-(tool-bar-mode nil)
+(tool-bar-mode -1)
 
 ;; No Startup screen
 (setq inhibit-startup-message t)

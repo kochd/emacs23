@@ -72,15 +72,6 @@
 ;; Settings and Modes ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-;; ,----
-;; | auto-dim-other-buffers
-;; `----
-(auto-dim-other-buffers-mode t)
-(set-face-background 'auto-dim-other-buffers-face "#000000")
-
-
-
 ;; ,----
 ;; | Org-Mode
 ;; `----

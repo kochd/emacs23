@@ -68,7 +68,7 @@
 ;; ,----
 ;; | Font
 ;; `----
-(set-face-attribute 'default nil :height 80 :family "Droid Sans Mono" )
+(set-face-attribute 'default nil :height 100 :family "Droid Sans Mono" )
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;

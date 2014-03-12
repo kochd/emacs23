@@ -135,9 +135,11 @@
 (setq uniquify-buffer-name-style 'forward)
 
 ;; saveplace
-(setq save-place-file "~/.emacs.d/saveplace-save");; keep my ~/ clean
+(require 'saveplace)
+(eval-after-load 'saveplace
+(progn
 (setq-default save-place t)                       ;; activate it for all buffers
-;(require 'saveplace)                              ;; get the package)'))))"")
+(setq save-place-file "~/.emacs.saveplace")));; keep my ~/ clean
 
 ;; Follow symlinks
 (setq vc-follow-symlinks 1)

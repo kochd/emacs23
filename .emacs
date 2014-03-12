@@ -175,7 +175,10 @@
 (icomplete-mode t)
 
 ;; Show linenumbers on the left
-(global-linum-mode t)
+;(global-linum-mode t)
+(global-nlinum-mode t)
+;Nlinum claims to be more efficient
+
 
 ;; Hightlight current line and colum
 (global-hl-line-mode t)

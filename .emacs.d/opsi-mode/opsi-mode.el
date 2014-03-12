@@ -86,6 +86,7 @@
 "Else" "else"
 "For" "for"
 "In" "in"
+"isFatalError" "IsFatalError" "Isfatalerror" "isfatalerror"
 "Include_Insert" "Include_Insert" "Include_insert"
 "Include_Append" "Include_Append" "Include_append"
 "Sub" "sub"

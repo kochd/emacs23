@@ -104,7 +104,7 @@
 
 
 ;Yasnippet
-(when (>= emacs-major-version 24)
+(when (<= emacs-major-version 24)
 	  (yas-global-mode t)
 )
 
@@ -191,7 +191,20 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;;Enclose parens
-(enclose-global-mode)
+(if (> emacs-major-version 24)
+    (progn
+      (enclose-mode t) (electric-pair-mode nil))
+  (progn
+      (enclose-mode nil) (electric-pair-mode t)
+      (setq electric-pair-pairs '(
+                            (?\' . ?\')
+                            (?\" . ?\")
+                            (?\{ . ?\})
+                            (?\( . ?\))
+                            (?\[ . ?\])
+                            )))
+  )
+
 
 
 ;;;; Show whitespaces
@@ -237,6 +250,7 @@
 (global-set-key (kbd "C-<f8>") 'ispell-word)
 (global-set-key (kbd "S-<f8>") 'ispell-change-dictionary)
 (global-set-key (kbd "C-c -") 'comment-dwim)
+
 
 ;;; Eshell
 (global-set-key (kbd "<f1>") 'eshell)
@@ -295,6 +309,19 @@
   ;; If there is more than one, they won't work right.
  )
 
+
+
+;; ,----
+;; | Hooks
+;; `----
+(eval-after-load 'python-mode
+(add-hook 'python-mode-hook
+	  (lambda ()
+	    (define-key python-mode-map "\"" 'electric-pair)
+	    (define-key python-mode-map "\'" 'electric-pair)
+	    (define-key python-mode-map "(" 'electric-pair)
+	    (define-key python-mode-map "[" 'electric-pair)
+	    (define-key python-mode-map "{" 'electric-pair))))
 
 ;; ,----
 ;; | Auto-Byte-Compile

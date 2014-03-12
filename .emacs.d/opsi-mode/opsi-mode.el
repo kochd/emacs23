@@ -1,9 +1,13 @@
-;;; opsi-mode-el -- Major mode for editing OPSI files
+;;; opsi-mode-el -- Major mode for editing Winst/OPSI files
 
 ;; Author: Daniel Koch <koch@triple6.org>
 ;; Created: 07 Mar 2014
 ;; Keywords: OPSI major-mode
-;; Version: 0.4
+;; Version: 0.5
+;; Description:
+;; This is a Major-Mode for Editing Winst/OPSI files
+;; as involved in the software deployment software OPSI by uib
+;; See opsi.org for details
 
 ;; Copyright (C) 2014 Daniel Koch <koch@triple6.org>
 
@@ -39,125 +43,114 @@
 ;; ,----
 ;; | Syntax
 ;; `----
-(setq opsi-keywords '(
+(setq opsi-parts '(
 "Actions" "Initial"
 "actions" "initial"
 ))
 
-(setq opsi-types '(
+(setq opsi-sections '(
 "WinBatch" "DosBatch" "DosInAnIcon" "Sub" "Files" "Patch" "Registry"
 "Winbatch" "Dosbatch" "Dosinanicon"
 "winbatch" "dosbatch" "Dosinanicon" "sub" "files" "patch" "registry"
-
 ))
 
-(setq opsi-events '(
-"ScriptPath" "ScriptDrive"
-"Scriptpath" "Scriptdrive"
-"scriptpath" "scriptdrive"
-
-"SystemDrive"
-"Systemdrive"
-"systemdrive"
-
-"ProgramFiles32Dir" "ProgramFiles64Dir" "ProgramFilesDir"
-"programfiles32dir" "programfiles64dir" "programfilesdir"
-"Programfiles32dir" "Programfiles64dir" "Programfilesdir"
-
-"CurrentProfileDir" "CurrentDesktopDir"
-"currentprofiledir" "currentdesktopdir"
-"Currentprofiledir" "Currentdesktopdir"
-
-"AllUsersProfileDir"
-"Allusersprofiledir"
-"allusersprofiledir"
-
-
+(setq opsi-constants '(
+"ScriptPath" "Scriptpath" "scriptpath"
+"ScriptDrive" "Scriptdrive" "scriptdrive"
+"ProgramFiles32Dir" "Programfiles32dir" "programfiles32dir"
+"ProgramFiles64Dir" "Programfiles64dir" "programfiles64dir"
+"ProgramFilesDir" "Programfilesdir" "programfilesdir"
+"CurrentProfileDir" "Currentprofiledir" "currentprofiledir"
+"CurrentDesktopDir" "Currentdesktopdir" "currentdesktopdir"
+"AllUsersProfileDir" "Allusersprofiledir" "allusersprofiledir"
 ))
 
 (setq opsi-functions '(
-"SetLogLevel" "ExitOnError" "ScriptErrorMessages" "TraceMode" "StayOnTop"
-"Setloglevel" "Exitonerror" "Scripterrormessages" "Tracemode" "Staynntop"
-"setloglevel" "exitonerror" "scripterrormessages" "tracemode" "stayontop"
-
-"Comment" "Message" "ShowBitmap"
-"Showbitmap"
-"comment" "message" "showbitmap"
-
-"Set" "DefVar" "DefStringList"
-"Set" "Defvar" "Defstringlist"
-"SET" "DEFVAR" "DEFSTRINGLIST"
-"set" "defvar" "defstringlist"
-
-"If" "Or" "Not" "EndIf" "Else"
-"IF" "OR" "NOT" "Endif" "ENDIF" "ELSE"
-"if" "or" "not" "endif" "else"
-
-"for" "FOR" "For"
-"in" "IN" "In"
-
-"Include_Insert" "Include_Append" "Sub"
-"Include_insert" "Include_append"
-"include_insert" "include_append" "sub"
-
-"LogError" "IsFatalError"
-"isFatalError"
-"Logerror" "Isfatalerror"
-"logerror" "isfatalerror"
-"logError"
-
-"HasMinimumSpace"
-"Hasminimumspace"
-"hasminimumspace"
-
-"getReturnListFromSection" "getProductProperty" "getMsVersionInfo" "getLastExitCode"
-"GetReturnListFromSection" "GetProductProperty" "GetMSVersionInfo" "GetLastExitCode"
-"Getreturnlistfromsection" "Getproductproperty" "Getmsversioninfo"
-"getreturnlistfromsection" "getproductproperty" "getmsversioninfo" "getlastexitCode"
-
-"GetSystemType"
-"Getsystemtype"
-"getsystemtype"
-
-
-"takeString" "splitString"
-"Takestring" "Splitstring"
-"takestring" "splitstring"
-
+"SetLogLevel" "Setloglevel" "setloglevel"
+"ExitOnError" "Exitonerror" "exitonerror"
+"ScriptErrorMessages" "Scripterrormessages" "scripterrormessages"
+"TraceMode" "Tracemode" "tracemode"
+"StayOnTop" "Stayontop" "stayontop"
+"Comment" "comment"
+"Message" "message"
+"ShowBitmap" "Showbitmap" "showbitmap"
+"KillTask" "Killtask" "killtask"
+"SleepSeconds" "Sleepseconds" "sleepseconds"
+"Set" "set"
+"DefVar" "Defvar" "defvar"
+"DefStringList" "Defstringlist" "defstringlist"
+"If" "if"
+"Or" "or"
+"Not" "not"
+"EndIf" "Endif" "endif"
+"Else" "else"
+"For" "for"
+"In" "in"
+"Include_Insert" "Include_Insert" "Include_insert"
+"Include_Append" "Include_Append" "Include_append"
+"Sub" "sub"
+"LogError" "Logerror" "logerror"
+"IsFatalError" "Isfatalerror" "isfatalerror"
+"HasMinimumSpace" "Hasminimumspace" "hasminimumspace"
+"GetReturnListFromSection" "getReturnListFromSection" "Getreturnlistfromsection" "getreturnlistfromsection"
+"GetProductProperty" "getProductProperty" "Getproductproperty" "getproductproperty"
+"GetMsVersionInfo" "getMsVersionInfo" "Getmsversioninfo" "getmsversioninfo"
+"GetLastExitCode" "getLastExitCode" "Getlastexitcode" "getlastexitcode"
+"GetSystemType" "GetSystemType" "Getsystemtype" "getsystemtype"
+"TakeString" "takeString" "Takestring" "takestring"
+"SplitString" "splitString" "Splitstring" "splitstring"
+"ExitWindows" "ExitWindows" "Exitwindows" "exitwindows"
 ))
 
-;; create the regex string for each class of keywords
+(setq opsi-functions-args '(
+"Waitforprocessending" "Timeout" "ImmediateLogout"
+"waitforprocessending" "Timeout" "Immediatelogout"
+"WaitForProcessEnding" "Timeout" "immediatelogout"
+))
+
 ;; []
-(setq opsi-keywords-regexp (concat "\\[" (regexp-opt opsi-keywords ) "\\]"))
+(setq opsi-parts-regexp (concat "\\[" (regexp-opt opsi-parts ) "\\]"))
 
 ;; Section_
-(setq opsi-type-regexp (concat "\\(\\[\\|\\)" (regexp-opt opsi-types ) "_\\(_\\|\\w\\)*\\(\\]\\|\\)"))
+(setq opsi-sections-regexp (concat "\\(\\[\\|\\)" (regexp-opt opsi-sections ) "_\\(_\\|\\w\\)*\\(\\]\\|\\)"))
 
 ;; %
-(setq opsi-event-regexp (concat "%" (regexp-opt opsi-events) "%"))
+(setq opsi-constants-regexp (concat "%" (regexp-opt opsi-constants) "%"))
 
 ;; $
-(setq opsi-constant-regexp "\\<\$\\(\\w\\|\_\\|\-\\)*\$\\>")
+(setq opsi-variables-regexp "\\<\$\\(\\w\\|\_\\|\-\\)*\$\\>")
 
+;; DefVar,Set
 (setq opsi-functions-regexp (regexp-opt opsi-functions 'words))
 
-;;; Clear mem
-(setq opsi-keywords nil)
-(setq opsi-types nil)
-(setq opsi-events nil)
-(setq opsi-functions nil)
+;; Parsing ARGS with leading "/"
+(setq opsi-functions-args-regexp (concat "\/" (regexp-opt opsi-functions-args)))
+
+
+;;Warning ARGS. (Not legit)
+(setq opsi-warning-args-regexp  "%\\w*%")
 
 ;; create the list for font-lock.
 ;; each class of keyword is given a particular face
 (setq opsi-font-lock-keywords
   `(
-    (,opsi-type-regexp . font-lock-type-face)
-    (,opsi-constant-regexp . font-lock-constant-face)
-    (,opsi-event-regexp . font-lock-builtin-face)
+    (,opsi-parts-regexp . font-lock-keyword-face)
+    (,opsi-sections-regexp . font-lock-keyword-face)
+    (,opsi-constants-regexp . font-lock-builtin-face)
     (,opsi-functions-regexp . font-lock-function-name-face)
-    (,opsi-keywords-regexp . font-lock-keyword-face)
+    (,opsi-functions-args-regexp . font-lock-builtin-face)
+    (,opsi-variables-regexp . font-lock-constant-face)
+    (,opsi-warning-args-regexp . font-lock-warning-face)
     ;; note: order above matters. “opsi-keywords-regexp” goes last because
 ))
+
+;;; Clear mem
+(setq opsi-parts-regexp nil)
+(setq opsi-sections-regexp nil)
+(setq opsi-constants-regexp nil)
+(setq opsi-functions-regexp nil)
+(setq opsi-functions-args-regexp nil)
+(setq opsi-variables-regexp nil)
 
 (defvar opsi-mode-syntax-table
   (let ((opsi-mode-syntax-table (make-syntax-table )))
@@ -169,8 +162,22 @@
 	(modify-syntax-entry ?\\ " "  opsi-mode-syntax-table)  ; "\" does nothing ( Escapes by default )
 
 
+
 	opsi-mode-syntax-table)
   "Syntax table for opsi-mode")
+
+;; ,----
+;; | Comment-dwim
+;; `----
+(defun opsi-comment-dwim (arg)
+  "Comment or uncomment current line or region in a smart way.
+For detail, see `comment-dwim'."
+  (interactive "*P")
+  (require 'newcomment)
+  (let (
+        (comment-start ";")
+        )
+    (comment-dwim arg)))
 
 
 ;; ,----
@@ -180,7 +187,6 @@
   "Indent current line as OPSI code."
   (interactive)
   (beginning-of-line)
-
     (let ((not-indented t) cur-indent)
         (if (looking-at "^[ \t]*\\(Endif\\|Else\\)") ; If the line we are looking at is the end of a block, then decrease the indentation
 	      (progn
@@ -216,7 +222,7 @@
 ;; | Key Bindings
 ;; `----
 (define-key opsi-mode-map (kbd "<backtab>") 'indent-relative)
-
+(define-key opsi-mode-map [remap comment-dwim] 'opsi-comment-dwim)
 ;; ,----
 ;; | Mode Definition
 ;; `----

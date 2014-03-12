@@ -32,11 +32,12 @@
 
 (require 'package)
 (add-to-list 'package-archives
-	     '("marmalade" .
-	       "http://marmalade-repo.org/packages/"))
+	     '("ELPA" . "http://tromey.com/elpa/"))
 (add-to-list 'package-archives
-	     '("melpa" .
-	       "http://melpa.milkbox.net/packages/"))
+	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.milkbox.net/packages/"))
+
 (package-initialize)
 
 ;;;;;;;;;;;;
@@ -62,7 +63,6 @@
 ;(set-face-background 'region  "red")       ; Region color
 (set-face-background 'hl-line "#111111")   ; hl-line color
 
-(set-face-background 'col-highlight "#303030") ; col-line color
 ;(set-face-foreground 'paren-face "#cc6666")
 
 ;; ,----
@@ -87,6 +87,7 @@
 ;; | Org-Mode
 ;; `----
 
+(eval-after-load 'org-mode
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(
@@ -101,7 +102,7 @@
    (perl . t)
    (C . t)
    ))
-
+)
 
 ;Yasnippet
 (when (<= emacs-major-version 24)
@@ -165,10 +166,13 @@
 
 ;; Hightlight current line and colum
 (global-hl-line-mode t)
-(col-highlight-flash t)
-(col-highlight-toggle-when-idle t)
-(col-highlight-set-interval 0.5) ; Interval till col-line is shown
-
+(eval-after-load 'global-hl-line-mode
+  (progn
+    (col-highlight-flash t)
+    (col-highlight-toggle-when-idle t)
+    (col-highlight-set-interval 0.5) ; Interval till col-line is shown
+    (set-face-background 'col-highlight "#111111") ; col-line color
+    ))
 ;; Show paren brakets
 ;;(show-paren-mode t)
 ;; REPLACED
@@ -195,17 +199,16 @@
     (progn
       (enclose-mode t) (electric-pair-mode nil))
   (progn
-      (enclose-mode nil) (electric-pair-mode t)
-      (setq electric-pair-pairs '(
+      (enclose-mode nil) (electric-pair-mode t)))
+
+  (eval-after-load 'electric-pair-mode
+  (setq electric-pair-pairs '(
                             (?\' . ?\')
                             (?\" . ?\")
                             (?\{ . ?\})
                             (?\( . ?\))
                             (?\[ . ?\])
                             )))
-  )
-
-
 
 ;;;; Show whitespaces
 (global-whitespace-mode t)
@@ -213,6 +216,7 @@
 ;;; What kind of whitespaces to show?
 ;; See whitespace-toggle-options for further information about what kind of
 ;; modes can be used
+(eval-after-load 'global-whitespace-mode
 (setq whitespace-style (quote (
 			       empty
 			       face
@@ -222,7 +226,7 @@
 			       space-before-tab
 			       trailing
 			       tab-mark
-			       )))
+			       ))))
 
 ;; clipboard integration for X
 (setq x-select-enable-clipboard t)

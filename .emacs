@@ -31,6 +31,9 @@
 )
 
 (require 'package)
+
+(eval-after-load 'package
+(progn
 (add-to-list 'package-archives
 	     '("ELPA" . "http://tromey.com/elpa/"))
 (add-to-list 'package-archives
@@ -38,7 +41,7 @@
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.milkbox.net/packages/"))
 
-(package-initialize)
+(package-initialize)))
 
 ;;;;;;;;;;;;
 ;; Colors ;;

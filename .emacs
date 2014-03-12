@@ -146,6 +146,9 @@
 ;; No Toolbar
 (tool-bar-mode -1)
 
+;; No Scrollbar
+(scroll-bar-mode -1)
+
 ;; No Startup screen
 (setq inhibit-startup-message t)
 

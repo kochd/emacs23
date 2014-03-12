@@ -347,3 +347,14 @@
 ;; | Recompile .emacs.d every start
 ;; `----
 ;(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
+
+
+;; ,----
+;; | Compile .emacs.d every start
+;; `----
+;; (require 'find-lisp)
+;; (mapc
+;;  (lambda (x) (byte-compile-file x))
+;;  (find-lisp-find-files
+;;   (expand-file-name "~/.emacs.d/")
+;;   "\\.el$"))

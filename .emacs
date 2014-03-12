@@ -25,7 +25,7 @@
 ;;;;; Packages
 
 ;; Other archives
-(when (<= emacs-major-version 24)
+(when (< emacs-major-version 24)
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/package.el"))
   (load (expand-file-name "~/.emacs.d/package.el"))
 )
@@ -108,7 +108,7 @@
 )
 
 ;Yasnippet
-(when (<= emacs-major-version 24)
+(when (>= emacs-major-version 24)
 	  (yas-global-mode t)
 )
 
@@ -198,9 +198,9 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;;Enclose parens
-(if (> emacs-major-version 24)
+(if (< emacs-major-version 24)
     (progn
-      (enclose-mode t) (electric-pair-mode nil))
+      (enclose-mode t))
   (progn
       (enclose-mode nil) (electric-pair-mode t)))
 
@@ -322,13 +322,14 @@
 ;; | Hooks
 ;; `----
 (eval-after-load 'python-mode
+(if (>= emacs-major-version 24)
 (add-hook 'python-mode-hook
 	  (lambda ()
 	    (define-key python-mode-map "\"" 'electric-pair)
 	    (define-key python-mode-map "\'" 'electric-pair)
 	    (define-key python-mode-map "(" 'electric-pair)
 	    (define-key python-mode-map "[" 'electric-pair)
-	    (define-key python-mode-map "{" 'electric-pair))))
+	    (define-key python-mode-map "{" 'electric-pair)))))
 
 ;; ,----
 ;; | Auto-Byte-Compile

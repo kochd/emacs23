@@ -224,6 +224,215 @@ For detail, see `comment-dwim'."
 ;; `----
 (define-key opsi-mode-map (kbd "<backtab>") 'indent-relative)
 (define-key opsi-mode-map [remap comment-dwim] 'opsi-comment-dwim)
+(define-key opsi-mode-map (kbd "<f8>") 'opsi-makeproductfile)
+
+
+;; ,----
+;; | Functions
+;; `----
+(defun opsi-cd-proddir()
+  (setq init-dir (concat(buffer-file-name)"/../"))
+  (cd init-dir)
+  (while (not(file-exists-p "OPSI/control"))
+    (progn
+      (message "Searching OPSI/control")
+      (cd "..")))
+  (message "Found OPSI/control"))
+
+(defun opsi-find-control()
+  (interactive)
+  (opsi-cd-proddir)
+  (find-file "OPSI/control"))
+
+(defun opsi-find-any (arg)
+  (opsi-cd-proddir)
+  (opsi-get-files)
+  (if (string= (concat opsi-file- arg) "")
+  (message (concat "There is no "arg "Script")
+  (find-file (concat "CLIENT_DATA/" opsi-file-setup )))))
+
+(defun opsi-find-setup()
+  (interactive)
+  (opsi-cd-proddir)
+  (opsi-get-files)
+  (if (string= opsi-file-setup "")
+  (message "There is no setupScript")
+  (find-file (concat "CLIENT_DATA/" opsi-file-setup ))))
+
+(defun opsi-find-uninstall()
+  (interactive)
+  (opsi-cd-proddir)
+  (opsi-get-files)
+  (if (string= opsi-file-uninstall "")
+  (message "There is no uninstallScript")
+  (find-file (concat "CLIENT_DATA/" opsi-file-uninstall ))))
+
+(defun opsi-find-update()
+  (interactive)
+  (opsi-cd-proddir)
+  (opsi-get-files)
+  (if (string= opsi-file-update "")
+  (message "There is no updateScript")
+  (find-file (concat "CLIENT_DATA/" opsi-file-update ))))
+
+(defun opsi-find-always()
+  (interactive)
+  (opsi-cd-proddir)
+  (opsi-get-files)
+  (if (string= opsi-file-always "")
+  (message "There is no alwaysScript")
+  (find-file (concat "CLIENT_DATA/" opsi-file-always ))))
+
+(defun opsi-find-once()
+  (interactive)
+  (opsi-cd-proddir)
+  (opsi-get-files)
+  (if (string= opsi-file-once "")
+  (message "There is no onceScript")
+  (find-file (concat "CLIENT_DATA/" opsi-file-once ))))
+
+(defun opsi-find-custom()
+  (interactive)
+  (opsi-cd-proddir)
+  (opsi-get-files)
+  (if (string= opsi-file-custom "")
+  (message "There is no customScript")
+  (find-file (concat "CLIENT_DATA/" opsi-file-custom ))))
+
+(defun opsi-find-userlogin()
+  (interactive)
+  (opsi-cd-proddir)
+  (opsi-get-files)
+  (if (string= opsi-file-userlogin "")
+  (message "There is no userloginScript")
+  (find-file (concat "CLIENT_DATA/" opsi-file-userlogin ))))
+
+
+(defun opsi-get-files ()
+  (setq opsi-file-setup nil)
+  (setq opsi-file-uninstall nil)
+  (setq opsi-file-update nil)
+  (setq opsi-file-always nil)
+  (setq opsi-file-once nil)
+  (setq opsi-file-custom nil)
+  (setq opsi-file-userlogin nil)
+
+  (setq opsi-file-setup
+	(replace-regexp-in-string "\n$" ""
+				  (replace-regexp-in-string " " ""
+							    (shell-command-to-string "grep setupScript: OPSI/control|cut -d: -f2"))))
+
+  (setq opsi-file-uninstall
+	(replace-regexp-in-string "\n$" ""
+				  (replace-regexp-in-string " " ""
+							    (shell-command-to-string "grep uninstallScript: OPSI/control|cut -d: -f2"))))
+
+(setq opsi-file-update
+	(replace-regexp-in-string "\n$" ""
+				  (replace-regexp-in-string " " ""
+							    (shell-command-to-string "grep updateScript: OPSI/control|cut -d: -f2"))))
+
+  (setq opsi-file-always
+	(replace-regexp-in-string "\n$" ""
+				  (replace-regexp-in-string " " ""
+							    (shell-command-to-string "grep alwaysScript: OPSI/control|cut -d: -f2"))))
+
+  (setq opsi-file-once
+	(replace-regexp-in-string "\n$" ""
+				  (replace-regexp-in-string " " ""
+							    (shell-command-to-string "grep onceScript: OPSI/control|cut -d: -f2"))))
+
+  (setq opsi-file-custom
+	(replace-regexp-in-string "\n$" ""
+				  (replace-regexp-in-string " " ""
+							    (shell-command-to-string "grep customScript: OPSI/control|cut -d: -f2"))))
+
+  (setq opsi-file-userlogin
+	(replace-regexp-in-string "\n$" ""
+				  (replace-regexp-in-string " " ""
+							    (shell-command-to-string "grep userLoginScript: OPSI/control|cut -d: -f2"))))
+)
+
+
+
+
+
+(defun opsi-status ()
+  "Test Only!"
+  (interactive)
+  (opsi-cd-proddir)
+  (setq opsi-product-id
+	(replace-regexp-in-string "\n$" ""
+				  (replace-regexp-in-string " " ""
+							    (shell-command-to-string "grep id: OPSI/control|cut -d: -f2"))))
+  (setq opsi-product-minor-version
+	(replace-regexp-in-string "\n$" ""
+				  (replace-regexp-in-string " " ""
+							    (shell-command-to-string "grep version: OPSI/control|cut -d: -f2|head -n 1"))))
+  (setq opsi-product-major-version
+	(replace-regexp-in-string "\n$" ""
+				  (replace-regexp-in-string " " ""
+							    (shell-command-to-string "grep version: OPSI/control|cut -d: -f2|tail -n 1"))))
+  (message (concat "id:" opsi-product-id " major-version:" opsi-product-major-version " minor-version:" opsi-product-minor-version))
+)
+
+(defun opsi-major-update ()
+  "Test Only!"
+  (interactive)
+  (opsi-cd-proddir)
+  (opsi-status)
+  (setq new-major-version nil)
+  (setq new-major-version(read-no-blanks-input (concat "New Version:") opsi-product-major-version))
+  (shell-command (concat "sed -i 's/version: " opsi-product-major-version "/version: " new-major-version "/' OPSI/control"))
+  (opsi-cd-proddir)
+  (opsi-status)
+  (message (concat "New major-version is " opsi-product-major-version))
+)
+
+(defun opsi-minor-update ()
+  "Test Only!"
+  (interactive)
+  (opsi-cd-proddir)
+  (opsi-status)
+  (setq new-minor-version nil)
+  (setq new-minor-version(read-no-blanks-input (concat "New Version:") opsi-product-minor-version))
+  (shell-command (concat "sed -i 's/version: " opsi-product-minor-version "/version: " new-minor-version "/' OPSI/control"))
+  (opsi-cd-proddir)
+  (opsi-status)
+  (message (concat "New minor-version is " opsi-product-minor-version))
+)
+
+(defun opsi-makeproductfile ()
+  "Test Only!"
+  (interactive)
+  (opsi-cd-proddir)
+  (opsi-status)
+  (if (y-or-n-p (concat "Change Version: " opsi-product-id "-" opsi-product-major-version "-" opsi-product-minor-version "?"))
+      (progn
+	(opsi-major-update)
+	(opsi-minor-update)
+	)
+    )
+  (if (y-or-n-p (concat "Make Product: " opsi-product-id "-" opsi-product-major-version "-" opsi-product-minor-version "?"))
+      (message "Not implemented yet. Sorry")
+)
+)
+
+(defun opsi-install-package ()
+  "Test Only!"
+  (interactive)
+  (opsi-cd-proddir)
+;  (eshell-command "echo Foo > Test")
+  )
+
+(defun opsi-install-package-to-all-depots ()
+  "Test Only!"
+  (interactive)
+  (opsi-cd-proddir)
+  (opsi-status)
+  (message "Not implemented yet. Sorry"))
+;  (eshell-command "echo Foo > Test")
+
 ;; ,----
 ;; | Mode Definition
 ;; `----
@@ -243,5 +452,7 @@ For detail, see `comment-dwim'."
 
 (provide 'opsi-mode)
 (provide 'opsi-mode-map)
+
+
 
 ;;; opsi-mode.el ends here

@@ -3,7 +3,7 @@
 ;; Author: Daniel Koch <koch@triple6.org>
 ;; Created: 07 Mar 2014
 ;; Keywords: OPSI major-mode
-;; Version: 0.5
+;; Version: 0.6
 ;; Description:
 ;; This is a Major-Mode for Editing Winst/OPSI files
 ;; as involved in the software deployment software OPSI by uib
@@ -407,14 +407,15 @@ For detail, see `comment-dwim'."
   (interactive)
   (opsi-cd-proddir)
   (opsi-status)
-  (if (y-or-n-p (concat "Change Version: " opsi-product-id "-" opsi-product-major-version "-" opsi-product-minor-version "?"))
+  (if (y-or-n-p (concat "Change Version: " opsi-product-id "_" opsi-product-major-version "-" opsi-product-minor-version "?"))
       (progn
 	(opsi-major-update)
 	(opsi-minor-update)
 	)
     )
-  (if (y-or-n-p (concat "Make Product: " opsi-product-id "-" opsi-product-major-version "-" opsi-product-minor-version "?"))
-      (message "Not implemented yet. Sorry")
+  (if (y-or-n-p (concat "Make Product: " opsi-product-id "_" opsi-product-major-version "-" opsi-product-minor-version "?"))
+      (shell-command (concat "opsi-makeproductfile -q" )
+)
 )
 )
 
@@ -422,16 +423,25 @@ For detail, see `comment-dwim'."
   "Test Only!"
   (interactive)
   (opsi-cd-proddir)
-;  (eshell-command "echo Foo > Test")
+  (opsi-status)
+  (if (file-exists-p (concat opsi-product-id "_" opsi-product-major-version "-" opsi-product-minor-version ".opsi"))
+      (if (y-or-n-p (concat "Install Package:" opsi-product-id "_" opsi-product-major-version "-" opsi-product-minor-version ".opsi?"))
+	  (eshell-command (concat "opsi-package-manager -q -i " opsi-product-id "_" opsi-product-major-version "-" opsi-product-minor-version ".opsi && echo Installation of " opsi-product-id " completed without error" ))
+	)
+    )
   )
 
-(defun opsi-install-package-to-all-depots ()
+(defun opsi-install-package-on-all-depots ()
   "Test Only!"
   (interactive)
   (opsi-cd-proddir)
   (opsi-status)
-  (message "Not implemented yet. Sorry"))
-;  (eshell-command "echo Foo > Test")
+  (if (file-exists-p (concat opsi-product-id "_" opsi-product-major-version "-" opsi-product-minor-version ".opsi"))
+      (if (y-or-n-p (concat "Install Package on all depots:" opsi-product-id "_" opsi-product-major-version "-" opsi-product-minor-version ".opsi?"))
+	  (eshell-command (concat "opsi-package-manager -q -dALL -i " opsi-product-id "_" opsi-product-major-version "-" opsi-product-minor-version ".opsi && echo Installation of " opsi-product-id " completed without error" ))
+	)
+    )
+  )
 
 ;; ,----
 ;; | Mode Definition

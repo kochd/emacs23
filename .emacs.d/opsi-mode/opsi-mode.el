@@ -3,7 +3,7 @@
 ;; Author: Daniel Koch <koch@triple6.org>
 ;; Created: 07 Mar 2014
 ;; Keywords: OPSI major-mode
-;; Version: 0.6
+;; Version: 0.7
 ;; Description:
 ;; This is a Major-Mode for Editing Winst/OPSI files
 ;; as involved in the software deployment software OPSI by uib
@@ -44,69 +44,223 @@
 ;; | Syntax
 ;; `----
 (setq opsi-parts '(
-"Actions" "Initial"
-"actions" "initial"
+"Actions" "actions"
+"Initial" "initial"
+"ProfileActions" "Profileactions" "profileactions"
 ))
 
 (setq opsi-sections '(
-"WinBatch" "DosBatch" "DosInAnIcon" "Sub" "Files" "Patch" "Registry"
-"Winbatch" "Dosbatch" "Dosinanicon"
-"winbatch" "dosbatch" "Dosinanicon" "sub" "files" "patch" "registry"
+"DosBatch" "Dosbatch" "dosbatch"
+"DosInAnIcon" "Dosinanicon" "dosinanicon"
+"ExecPython" "Execpython" "execpython"
+"ExecWith" "Execwith" "execwith"
+"Files" "files"
+"LdapSearch" "Ldapsearch" "ldapsearch"
+"LinkFolder" "Linkfolder" "linkfolder"
+"OpsiServiceCall" "Opsiservicecall" "opsiservicecall"
+"PatchHosts" "Patchhosts" "patchhosts"
+"PatchTextFile" "Patchtextfile" "patchtextfile"
+"Patches" "patches"
+"Registry" "registry"
+"Sub" "sub"
+"WinBatch" "Winbatch" "winbatch"
+"XMLPatch" "XMLpatch" "xmlpatch"
 ))
 
 (setq opsi-constants '(
-"ScriptPath" "Scriptpath" "scriptpath"
-"ScriptDrive" "Scriptdrive" "scriptdrive"
+"AllUsersProfileDir" "Allusersprofiledir" "allusersprofiledir"
+"AppdataDir" "Appdatadir" "appdatadir"
+"CommonAppdataDir" "Commonappdatadir" "commonappdatadir"
+"CommonDesktopDir" "Commondesktopdir" "commondesktopdir"
+"CommonProfileDir" "Commonprofiledir" "commonprofiledir"
+"CommonProgramsDir" "Commonprogramsdir" "commonprogramsdir"
+"CommonStartMenuPath" "Commonstartmenupath" "commonstartmenupath"
+"CommonStartmenuDir" "Commonstartmenudir" "commonstartmenudir"
+"CommonStartupDir" "Commonstartupdir" "commonstartupdir"
+"CurrentAppdataDir" "Currentappdatadir" "currentappdatadir"
+"CurrentDesktopDir" "Currentdesktopdir" "currentdesktopdir"
+"CurrentProfileDir" "Currentprofiledir" "currentprofiledir"
+"CurrentProgramsDir" "Currentprogramsdir" "currentprogramsdir"
+"CurrentSendToDir" "Currentsendtodir" "currentsendtodir"
+"CurrentStartmenuDir" "Currentstartmenudir" "currentstartmenudir"
+"CurrentStartupDir" "Currentstartupdir" "currentstartupdir"
+"DefaultUserProfileDir" "Defaultuserprofiledir" "defaultuserprofiledir"
+"Host" "host"
+"HostID" "Hostid" "hostid"
+"IPAddress" "Ipaddress" "ipaddress"
+"InstallingProdName" "installingProdName" "Installingprodname" "installingprodname"
+"InstallingProdVersion" "installingProdVersion" "Installingprodversion" "installingprodversion"
+"InstallingProduct" "installingProduct" "Installingproduct" "installingproduct"
+"LogFile" "Logfile" "logfile"
+"OpsiScriptHelperPath" "opsiScriptHelperPath" "Opsiscripthelperpath" "opsiscripthelperpath"
+"OpsiServicePassword" "opsiServicePassword" "opsiservicePassword" "Opsiservicepassword" "opsiservicepassword"
+"OpsiServiceURL" "opsiServiceURL" "opsiserviceURL" "Opsiserviceurl" "opsiserviceurl"
+"OpsiServiceUser" "opsiServiceUser" "opsiserviceUser" "Opsiserviceuser" "opsiserviceuser"
+"PCName" "Pcname" "pcname"
+"ProfileDir" "Profiledir" "profiledir"
 "ProgramFiles32Dir" "Programfiles32dir" "programfiles32dir"
 "ProgramFiles64Dir" "Programfiles64dir" "programfiles64dir"
 "ProgramFilesDir" "Programfilesdir" "programfilesdir"
-"CurrentProfileDir" "Currentprofiledir" "currentprofiledir"
-"CurrentDesktopDir" "Currentdesktopdir" "currentdesktopdir"
-"AllUsersProfileDir" "Allusersprofiledir" "allusersprofiledir"
+"ProgramFilesSysnativeDir" "Programfilessysnativedir" "programfilessysnativedir"
+"ScriptDir" "Scriptdir" "scriptdir"
+"ScriptDrive" "Scriptdrive" "scriptdrive"
+"ScriptPath" "Scriptpath" "scriptpath"
+"System" "system"
+"SystemRoot" "Systemroot" "systemroot"
+"UserProfileDir" "Userprofiledir" "userprofiledir"
+"Username" "username"
+"WinstDir" "Winstdir" "winstdir"
+"WinstVersion" "Winstversion" "winstversion"
+"opsiServer" "Opsiserver" "opsiserver"
+
+
 ))
 
 (setq opsi-functions '(
-"SetLogLevel" "Setloglevel" "setloglevel"
-"ExitOnError" "Exitonerror" "exitonerror"
-"ScriptErrorMessages" "Scripterrormessages" "scripterrormessages"
-"TraceMode" "Tracemode" "tracemode"
-"StayOnTop" "Stayontop" "stayontop"
+"="
+"AND" "And" "and"
+"ChangeDirectory" "Changedirectory" "changedirectory"
 "Comment" "comment"
-"Message" "message"
-"ShowBitmap" "Showbitmap" "showbitmap"
-"KillTask" "Killtask" "killtask"
-"SleepSeconds" "Sleepseconds" "sleepseconds"
-"Set" "set"
-"DefVar" "Defvar" "defvar"
+"CompareDotSeparatedNumbers" "Comparedotseparatednumbers" "comparedotseparatednumbers"
+"CompareDotSeparatedStrings" "Comparedotseparatedstrings" "comparedotseparatedstrings"
+"DecStrToHexStr" "Decstrtohexstr" "decstrtohexstr"
 "DefStringList" "Defstringlist" "defstringlist"
-"If" "if"
-"Or" "or"
-"Not" "not"
-"EndIf" "Endif" "endif"
+"DefVar" "Defvar" "defvar"
 "Else" "else"
-"For" "for"
-"In" "in"
-"isFatalError" "IsFatalError" "Isfatalerror" "isfatalerror"
-"Include_Insert" "Include_Insert" "Include_insert"
-"Include_Append" "Include_Append" "Include_append"
-"Sub" "sub"
-"LogError" "Logerror" "logerror"
-"IsFatalError" "Isfatalerror" "isfatalerror"
-"HasMinimumSpace" "Hasminimumspace" "hasminimumspace"
-"GetReturnListFromSection" "getReturnListFromSection" "Getreturnlistfromsection" "getreturnlistfromsection"
-"GetProductProperty" "getProductProperty" "Getproductproperty" "getproductproperty"
-"GetMsVersionInfo" "getMsVersionInfo" "Getmsversioninfo" "getmsversioninfo"
-"GetLastExitCode" "getLastExitCode" "Getlastexitcode" "getlastexitcode"
-"GetSystemType" "GetSystemType" "Getsystemtype" "getsystemtype"
-"TakeString" "takeString" "Takestring" "takestring"
-"SplitString" "splitString" "Splitstring" "splitstring"
+"EndIf" "Endif" "endif"
+"EnvVar" "Envvar" "envvar"
+"ExitOnError" "Exitonerror" "exitonerror"
 "ExitWindows" "ExitWindows" "Exitwindows" "exitwindows"
+"ExtractFilePath" "Extractfilepath" "extractfilepath"
+"FatalOnSyntaxError" "Fatalonsyntaxerror" "fatalonsyntaxerror"
+"FileExists" "Fileexists" "fileexists"
+"FileExists32" "Fileexists32" "fileexists32"
+"FileExists64" "Fileexists64" "fileexists64"
+"FileExistsSysNative" "Fileexistssysnative" "fileexistssysnative"
+"For" "for"
+"GetHostsAddr" "Gethostsaddr" "gethostsaddr"
+"GetHostsName" "Gethostsname" "gethostsname"
+"GetIpByName" "Getipbyname" "getipbyname"
+"GetLocaleInfoMap" "Getlocaleinfomap" "getlocaleinfomap"
+"GetLoggedInUser" "Getloggedinuser" "getloggedinuser"
+"GetMSVersionMap" "Getmsversionmap" "getmsversionmap"
+"GetMsVersionInfo" "getMsVersionInfo" "Getmsversioninfo" "getmsversioninfo"
+"GetMyIpByTarget" "Getmyipbytarget" "getmyipbytarget"
+"GetNtVersion" "Getntversion" "getntversion"
+"GetOS" "Getos" "getos"
+"GetProcessList" "Getprocesslist" "getprocesslist"
+"GetProductProperty" "getProductProperty" "Getproductproperty" "getproductproperty"
+"GetRegistryStringValue32" "Getregistrystringvalue32" "getregistrystringvalue32"
+"GetRegistryStringValue64" "Getregistrystringvalue64" "getregistrystringvalue64"
+"GetRegistryStringValueSysNative" "Getregistrystringvaluesysnative" "getregistrystringvaluesysnative"
+"GetRegistrystringvalue" "Getregistrystringvalue" "getregistrystringvalue"
+"GetScriptMode" "Getscriptmode" "getscriptmode"
+"GetSystemType" "GetSystemType" "Getsystemtype" "getsystemtype"
+"GetUserSID" "Getusersid" "getusersid"
+"GetUsercontext" "Getusercontext" "getusercontext"
+"GetvalueFromInifile" "Getvaluefrominifile" "getvaluefrominifile"
+"HasMinimumSpace" "Hasminimumspace" "hasminimumspace"
+"HexStrToDecStr" "Hexstrtodecstr" "hexstrtodecstr"
+"IconizeWinst" "Iconizewinst" "iconizewinst"
+"If" "if"
+"In" "in"
+"Include_Append" "Include_Append" "Include_append"
+"Include_Insert" "Include_Insert" "Include_insert"
+"IniVar" "Inivar" "inivar"
+"IsFatalError" "Isfatalerror" "isfatalerror"
+"KillTask" "Killtask" "killtask"
+"LineBeginning_Existsin" "linebeginning_ExistsIn" "LineBeginning_ExistsIn"
+"LineExistsIn" "Lineexistsin" "lineexistsin"
+"LogError" "logerror" "Logerror"
+"LogWarning" "Logwarning" "logwarning"
+"Message" "message"
+"NOT" "Not" "not"
+"NormalizeWinst" "Normalizewinst" "normalizewinst"
+"OR" "Or" "or"
+"ParamStr" "Paramstr" "paramstr"
+"Pause" "pause"
+"RandomStr" "Randomstr" "randomstr"
+"RestoreWinst" "Restorewinst" "restorewinst"
+"ScriptErrorMessages" "Scripterrormessages" "scripterrormessages"
+"Set" "set"
+"SetLogLevel" "Setloglevel" "setloglevel"
+"SetSkinDirectory" "Setskindirectory" "setskindirectory"
+"ShowBitmap" "Showbitmap" "showbitmap"
+"ShowMessageFile" "Showmessagefile" "showmessagefile"
+"SidToName" "Sidtoname" "sidtoname"
+"SleepSeconds" "Sleepseconds" "sleepseconds"
+"StayOnTop" "Stayontop" "stayontop"
+"Stop" "stop"
+"Sub" "sub"
+"SubstringBefore" "Substringbefore" "substringbefore"
+"TraceMode" "Tracemode" "tracemode"
+"XMLAddNamespace" "Xmladdnamespace" "xmladdnamespace" "XMLaddnamespace"
+"XMLRemoveNamespace" "Xmlremovenamespace" "xmlremovenamespace" "XMLremovenamespace"
+"addListToList" "Addlisttolist" "addlisttolist"
+"addtolist" "Addtolist" "addtolist"
+"base64DecodeStr" "Base64decodestr" "base64decodestr" "Base64DecodeStr"
+"base64EncodeStr" "Base64encodestr" "base64encodestr" "Base64EncodeStr"
+"calculate" "Calculate"
+"composeString" "Composestring" "composestring" "ComposeString"
+"contains" "Contains"
+"convert2Jsonstr" "Convert2jsonstr" "convert2jsonstr" "Convert2JsonStr"
+"count" "Count"
+"getDiffTimeSec" "Getdifftimesec" "getdifftimesec" "GetDiffTimeSec"
+"getFileInfoMap" "Getfileinfomap" "getfileinfomap" "GetFileInfoMap"
+"getLastExitCode" "Getlastexitcode" "getlastexitcode"
+"getListContaining" "Getlistcontaining" "getlistcontaining" "GetListContaining"
+"getOutStreamFromSection" "Getoutstreamfromsection" "getoutstreamfromsection" "GetOutStreamFromSection"
+"getProductMap" "Getproductmap" "getproductmap" "GetProductMap"
+"getProductPropertyList" "Getproductpropertylist" "getproductpropertylist" "GetProductPropertyList"
+"getProfilesDirList" "Getprofilesdirlist" "getprofilesdirlist" "GetProfilesDirList"
+"getRegistryKeyList32" "Getregistrykeylist32" "getregistrykeylist32" "GetRegistryKeyList32"
+"getRegistryKeyList64" "Getregistrykeylist64" "getregistrykeylist64" "GetRegistryKeyList64"
+"getRegistryKeyListSysNative" "Getregistrykeylistsysnative" "getregistrykeylistsysnative" "GetRegistryKeyListSysNative"
+"getRegistryVarList32" "Getregistryvarlist32" "getregistryvarlist32" "GetRegistryVarList32"
+"getRegistryVarList64" "Getregistryvarlist64" "getregistryvarlist64" "GetRegistryVarList64"
+"getRegistryVarListSysNative" "Getregistryvarlistsysnative" "getregistryvarlistsysnative" "GetRegistryVarListSysNative"
+"getRegistryVarMap32" "Getregistryvarmap32" "getregistryvarmap32" "GetRegistryVarMap32"
+"getRegistryVarMap64" "Getregistryvarmap64" "getregistryvarmap64" "GetRegistryVarMap64"
+"getRegistryVarMapSysNative" "Getregistryvarmapsysnative" "getregistryvarmapsysnative" "GetRegistryVarMapSysNative"
+"getReturnListFromSection" "Getreturnlistfromsection" "getreturnlistfromsection" "GetReturnListFromSection"
+"getSectionNames" "Getsectionnames" "getsectionnames" "GetSectionNames"
+"getSubList" "Getsublist" "getsublist" "GetSubList"
+"getValue" "Getvalue" "getvalue"
+"getValueBySeparator" "Getvaluebyseparator" "getvaluebyseparator"
+"includelog" "Includelog"
+"isLoginScript" "Isloginscript" "isloginscript" "IsLoginScript"
+"isNumber" "Isnumber" "isnumber" "IsNumber"
+"loadTextFile" "Loadtextfile" "loadtextfile" "LoadTextFile"
+"loadUnicodeTextFile" "Loadunicodetextfile" "loadunicodetextfile" "LoadUnicodeTextFile"
+"lower" "Lower"
+"opsiLicenseManagementEnabled" "Opsilicensemanagementenabled" "opsilicensemanagementenabled" "OpsiLicenseManagementEnabled"
+"readVersionFromProfile" "Readversionfromprofile" "readversionfromprofile"
+"requiredWinstVersion" "Requiredwinstversion" "requiredwinstversion" "RequiredWinstVersion"
+"retrieveSection" "Retrievesection"
+"reverse" "Reverse"
+"runningAsAdmin" "Runningasadmin" "runningasadmin" "RunningAsAdmin"
+"saveVersionToProfile" "Saveversiontoprofile" "saveversiontoprofile"
+"scriptWasExecutedBefore" "Scriptwasexecutedbefore" "scriptwasexecutedbefore"
+"splitString" "Splitstring" "splitstring" "SplitString"
+"splitStringOnWhiteSpace" "Splitstringonwhitespace" "splitstringonwhitespace" "SplitStringOnWhitespace"
+"strLength" "Strlength" "strlength"
+"strPart" "Strpart" "strpart"
+"strPos" "Strpos" "strpos"
+"stringReplace" "Stringreplace" "stringreplace"
+"takeFirstStringContaining" "Takefirststringcontaining" "takefirststringcontaining" "TakeFirstStringContaining"
+"takeString" "Takestring" "takestring" "TakeString"
+"trim" "Trim"
+"unquote" "Unquote"
 ))
 
 (setq opsi-functions-args '(
-"Waitforprocessending" "Timeout" "ImmediateLogout"
-"waitforprocessending" "Timeout" "Immediatelogout"
-"WaitForProcessEnding" "Timeout" "immediatelogout"
+"/ImmediateReboot" "/Immediatereboot" "/immediatereboot"
+"/Reboot" "/Reboot" "/reboot"
+"/ShutdownWanted" "/Shutdownwanted" "/shutdownwanted"
+"ImmediateLogout" "Immediatelogout" "immediatelogout"
+"RebootWanted" "Rebootwanted" "rebootwanted"
+"Timeout" "timeout"
+"WaitForProcessEnding" "Waitforprocessending" "waitforprocessending"
 ))
 
 ;; []
@@ -231,81 +385,87 @@ For detail, see `comment-dwim'."
 ;; | Functions
 ;; `----
 (defun opsi-cd-proddir()
+  (setq opsi-cd-proddir-error nil)
   (setq init-dir (concat(buffer-file-name)"/../"))
   (cd init-dir)
-  (while (not(file-exists-p "OPSI/control"))
+  (while (and(not(file-exists-p "OPSI/control")) (not(string-equal (shell-command-to-string "pwd") "/\n")))
     (progn
       (message "Searching OPSI/control")
-      (cd "..")))
-  (message "Found OPSI/control"))
+      (cd ".."))
+      (if (file-exists-p "OPSI/control")
+	  (message "Found OPSI/control")
+	(progn
+	  (setq opsi-cd-proddir-error t)
+	  (message "Cannot find OPSI/control")))))
 
 (defun opsi-find-control()
   (interactive)
   (opsi-cd-proddir)
-  (find-file "OPSI/control"))
-
-(defun opsi-find-any (arg)
-  (opsi-cd-proddir)
-  (opsi-get-files)
-  (if (string= (concat opsi-file- arg) "")
-  (message (concat "There is no "arg "Script")
-  (find-file (concat "CLIENT_DATA/" opsi-file-setup )))))
+  (if opsi-cd-proddir-error nil
+    (find-file "OPSI/control")))
 
 (defun opsi-find-setup()
   (interactive)
   (opsi-cd-proddir)
-  (opsi-get-files)
-  (if (string= opsi-file-setup "")
-  (message "There is no setupScript")
-  (find-file (concat "CLIENT_DATA/" opsi-file-setup ))))
+  (if opsi-cd-proddir-error nil
+    (opsi-get-files)
+    (if (string= opsi-file-setup "")
+	(message "There is no setupScript")
+      (find-file (concat "CLIENT_DATA/" opsi-file-setup )))))
 
 (defun opsi-find-uninstall()
   (interactive)
   (opsi-cd-proddir)
-  (opsi-get-files)
-  (if (string= opsi-file-uninstall "")
-  (message "There is no uninstallScript")
-  (find-file (concat "CLIENT_DATA/" opsi-file-uninstall ))))
+  (if opsi-cd-proddir-error nil
+    (opsi-get-files)
+    (if (string= opsi-file-uninstall "")
+	(message "There is no uninstallScript")
+      (find-file (concat "CLIENT_DATA/" opsi-file-uninstall )))))
 
 (defun opsi-find-update()
   (interactive)
   (opsi-cd-proddir)
-  (opsi-get-files)
-  (if (string= opsi-file-update "")
-  (message "There is no updateScript")
-  (find-file (concat "CLIENT_DATA/" opsi-file-update ))))
+  (if opsi-cd-proddir-error nil
+    (opsi-get-files)
+    (if (string= opsi-file-update "")
+	(message "There is no updateScript")
+      (find-file (concat "CLIENT_DATA/" opsi-file-update )))))
 
 (defun opsi-find-always()
   (interactive)
   (opsi-cd-proddir)
-  (opsi-get-files)
-  (if (string= opsi-file-always "")
-  (message "There is no alwaysScript")
-  (find-file (concat "CLIENT_DATA/" opsi-file-always ))))
+  (if opsi-cd-proddir-error nil
+    (opsi-get-files)
+    (if (string= opsi-file-always "")
+	(message "There is no alwaysScript")
+      (find-file (concat "CLIENT_DATA/" opsi-file-always )))))
 
 (defun opsi-find-once()
   (interactive)
   (opsi-cd-proddir)
-  (opsi-get-files)
-  (if (string= opsi-file-once "")
-  (message "There is no onceScript")
-  (find-file (concat "CLIENT_DATA/" opsi-file-once ))))
+  (if opsi-cd-proddir-error nil
+    (opsi-get-files)
+    (if (string= opsi-file-once "")
+	(message "There is no onceScript")
+      (find-file (concat "CLIENT_DATA/" opsi-file-once )))))
 
 (defun opsi-find-custom()
   (interactive)
   (opsi-cd-proddir)
-  (opsi-get-files)
-  (if (string= opsi-file-custom "")
-  (message "There is no customScript")
-  (find-file (concat "CLIENT_DATA/" opsi-file-custom ))))
+  (if opsi-cd-proddir-error nil
+    (opsi-get-files)
+    (if (string= opsi-file-custom "")
+	(message "There is no customScript")
+      (find-file (concat "CLIENT_DATA/" opsi-file-custom )))))
 
 (defun opsi-find-userlogin()
   (interactive)
   (opsi-cd-proddir)
-  (opsi-get-files)
-  (if (string= opsi-file-userlogin "")
-  (message "There is no userloginScript")
-  (find-file (concat "CLIENT_DATA/" opsi-file-userlogin ))))
+  (if opsi-cd-proddir-error nil
+    (opsi-get-files)
+    (if (string= opsi-file-userlogin "")
+	(message "There is no userloginScript")
+      (find-file (concat "CLIENT_DATA/" opsi-file-userlogin )))))
 
 
 (defun opsi-get-files ()
@@ -316,6 +476,9 @@ For detail, see `comment-dwim'."
   (setq opsi-file-once nil)
   (setq opsi-file-custom nil)
   (setq opsi-file-userlogin nil)
+
+  (opsi-cd-proddir)
+  (if opsi-cd-proddir-error nil
 
   (setq opsi-file-setup
 	(replace-regexp-in-string "\n$" ""
@@ -351,7 +514,7 @@ For detail, see `comment-dwim'."
 	(replace-regexp-in-string "\n$" ""
 				  (replace-regexp-in-string " " ""
 							    (shell-command-to-string "grep userLoginScript: OPSI/control|cut -d: -f2"))))
-)
+))
 
 
 
@@ -361,6 +524,7 @@ For detail, see `comment-dwim'."
   "Test Only!"
   (interactive)
   (opsi-cd-proddir)
+  (if opsi-cd-proddir-error nil
   (setq opsi-product-id
 	(replace-regexp-in-string "\n$" ""
 				  (replace-regexp-in-string " " ""
@@ -374,12 +538,15 @@ For detail, see `comment-dwim'."
 				  (replace-regexp-in-string " " ""
 							    (shell-command-to-string "grep version: OPSI/control|cut -d: -f2|tail -n 1"))))
   (message (concat "id:" opsi-product-id " major-version:" opsi-product-major-version " minor-version:" opsi-product-minor-version))
-)
+  (setq mode-name (concat "OPSI["opsi-product-id"_"opsi-product-major-version"-"opsi-product-minor-version"]"))
+
+))
 
 (defun opsi-major-update ()
   "Test Only!"
   (interactive)
   (opsi-cd-proddir)
+  (if opsi-cd-proddir-error nil
   (opsi-status)
   (setq new-major-version nil)
   (setq new-major-version(read-no-blanks-input (concat "New Version:") opsi-product-major-version))
@@ -387,12 +554,13 @@ For detail, see `comment-dwim'."
   (opsi-cd-proddir)
   (opsi-status)
   (message (concat "New major-version is " opsi-product-major-version))
-)
+))
 
 (defun opsi-minor-update ()
   "Test Only!"
   (interactive)
   (opsi-cd-proddir)
+  (if opsi-cd-proddir-error nil
   (opsi-status)
   (setq new-minor-version nil)
   (setq new-minor-version(read-no-blanks-input (concat "New Version:") opsi-product-minor-version))
@@ -400,12 +568,13 @@ For detail, see `comment-dwim'."
   (opsi-cd-proddir)
   (opsi-status)
   (message (concat "New minor-version is " opsi-product-minor-version))
-)
+))
 
 (defun opsi-makeproductfile ()
   "Test Only!"
   (interactive)
   (opsi-cd-proddir)
+  (if opsi-cd-proddir-error nil
   (opsi-status)
   (if (y-or-n-p (concat "Change Version: " opsi-product-id "_" opsi-product-major-version "-" opsi-product-minor-version "?"))
       (progn
@@ -418,11 +587,13 @@ For detail, see `comment-dwim'."
 )
 )
 )
+)
 
 (defun opsi-install-package ()
   "Test Only!"
   (interactive)
   (opsi-cd-proddir)
+  (if opsi-cd-proddir-error nil
   (opsi-status)
   (if (file-exists-p (concat opsi-product-id "_" opsi-product-major-version "-" opsi-product-minor-version ".opsi"))
       (if (y-or-n-p (concat "Install Package:" opsi-product-id "_" opsi-product-major-version "-" opsi-product-minor-version ".opsi?"))
@@ -430,11 +601,13 @@ For detail, see `comment-dwim'."
 	)
     )
   )
+  )
 
 (defun opsi-install-package-on-all-depots ()
   "Test Only!"
   (interactive)
   (opsi-cd-proddir)
+  (if opsi-cd-proddir-error nil
   (opsi-status)
   (if (file-exists-p (concat opsi-product-id "_" opsi-product-major-version "-" opsi-product-minor-version ".opsi"))
       (if (y-or-n-p (concat "Install Package on all depots:" opsi-product-id "_" opsi-product-major-version "-" opsi-product-minor-version ".opsi?"))
@@ -442,6 +615,7 @@ For detail, see `comment-dwim'."
 	)
     )
   )
+)
 
 ;; ,----
 ;; | Mode Definition
@@ -457,7 +631,7 @@ For detail, see `comment-dwim'."
   ;; Register our indentation function
   (set (make-local-variable 'indent-line-function) 'opsi-indent-line)
   (setq major-mode 'opsi-mode)
-  (setq mode-name "OPSI")
+  (opsi-status)
   (run-hooks 'opsi-mode-hook))
 
 (provide 'opsi-mode)

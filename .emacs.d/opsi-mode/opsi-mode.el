@@ -111,9 +111,7 @@
 "Username" "username"
 "WinstDir" "Winstdir" "winstdir"
 "WinstVersion" "Winstversion" "winstversion"
-"opsiServer" "Opsiserver" "opsiserver"
-
-
+"emptylist" "EmptyList" "Emptylist"
 ))
 
 (setq opsi-functions '(
@@ -171,7 +169,7 @@
 "KillTask" "Killtask" "killtask"
 "LineBeginning_Existsin" "linebeginning_ExistsIn" "LineBeginning_ExistsIn"
 "LineExistsIn" "Lineexistsin" "lineexistsin"
-"LogError" "logerror" "Logerror"
+"LogError" "logerror" "Logerror" "logError"
 "LogWarning" "Logwarning" "logwarning"
 "Message" "message"
 "NOT" "Not" "not"
@@ -228,12 +226,15 @@
 "getValue" "Getvalue" "getvalue"
 "getValueBySeparator" "Getvaluebyseparator" "getvaluebyseparator"
 "includelog" "Includelog"
+"isFatalError" "Isfatalerror" "isfatalerror" "IsFatalError"
 "isLoginScript" "Isloginscript" "isloginscript" "IsLoginScript"
 "isNumber" "Isnumber" "isnumber" "IsNumber"
+"isSuccess" "Issuccess" "IsSuccess"
 "loadTextFile" "Loadtextfile" "loadtextfile" "LoadTextFile"
 "loadUnicodeTextFile" "Loadunicodetextfile" "loadunicodetextfile" "LoadUnicodeTextFile"
 "lower" "Lower"
 "opsiLicenseManagementEnabled" "Opsilicensemanagementenabled" "opsilicensemanagementenabled" "OpsiLicenseManagementEnabled"
+"opsiServer" "Opsiserver" "opsiserver"
 "readVersionFromProfile" "Readversionfromprofile" "readversionfromprofile"
 "requiredWinstVersion" "Requiredwinstversion" "requiredwinstversion" "RequiredWinstVersion"
 "retrieveSection" "Retrievesection"
@@ -254,11 +255,14 @@
 ))
 
 (setq opsi-functions-args '(
-"/ImmediateReboot" "/Immediatereboot" "/immediatereboot"
-"/Reboot" "/Reboot" "/reboot"
-"/ShutdownWanted" "/Shutdownwanted" "/shutdownwanted"
+"32bit" "32Bit"
+"64bit" "64Bit"
 "ImmediateLogout" "Immediatelogout" "immediatelogout"
+"ImmediateReboot" "Immediatereboot" "immediatereboot"
+"Reboot" "Reboot" "reboot"
 "RebootWanted" "Rebootwanted" "rebootwanted"
+"ShutdownWanted" "Shutdownwanted" "shutdownwanted"
+"SysNative" "Sysnative" "sysnative"
 "Timeout" "timeout"
 "WaitForProcessEnding" "Waitforprocessending" "waitforprocessending"
 ))
@@ -388,7 +392,7 @@ For detail, see `comment-dwim'."
   (setq opsi-cd-proddir-error nil)
   (setq init-dir (concat(buffer-file-name)"/../"))
   (cd init-dir)
-  (while (and(not(file-exists-p "OPSI/control")) (not(string-equal (shell-command-to-string "pwd") "/\n")))
+  (while (and(not(file-exists-p "OPSI/control")) (not(string-equal (pwd) "Directory /")))
     (progn
       (message "Searching OPSI/control")
       (cd ".."))
@@ -635,8 +639,5 @@ For detail, see `comment-dwim'."
   (run-hooks 'opsi-mode-hook))
 
 (provide 'opsi-mode)
-(provide 'opsi-mode-map)
-
-
 
 ;;; opsi-mode.el ends here

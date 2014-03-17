@@ -182,6 +182,7 @@
 "RestoreWinst" "Restorewinst" "restorewinst"
 "ScriptErrorMessages" "Scripterrormessages" "scripterrormessages"
 "Set" "set"
+"SetConfidential" "Setconfidential" "setconfidential"
 "SetLogLevel" "Setloglevel" "setloglevel"
 "SetSkinDirectory" "Setskindirectory" "setskindirectory"
 "ShowBitmap" "Showbitmap" "showbitmap"

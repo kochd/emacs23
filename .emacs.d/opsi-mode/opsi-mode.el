@@ -107,11 +107,11 @@
 "ScriptPath" "Scriptpath" "scriptpath"
 "System" "system"
 "SystemRoot" "Systemroot" "systemroot"
+"SystemDrive" "Systemdrive" "systemdrive"
 "UserProfileDir" "Userprofiledir" "userprofiledir"
 "Username" "username"
 "WinstDir" "Winstdir" "winstdir"
 "WinstVersion" "Winstversion" "winstversion"
-"emptylist" "EmptyList" "Emptylist"
 ))
 
 (setq opsi-functions '(
@@ -125,6 +125,7 @@
 "DefStringList" "Defstringlist" "defstringlist"
 "DefVar" "Defvar" "defvar"
 "Else" "else"
+"emptylist" "EmptyList" "Emptylist"
 "EndIf" "Endif" "endif"
 "EnvVar" "Envvar" "envvar"
 "ExitOnError" "Exitonerror" "exitonerror"
@@ -162,8 +163,8 @@
 "IconizeWinst" "Iconizewinst" "iconizewinst"
 "If" "if"
 "In" "in"
-"Include_Append" "Include_Append" "Include_append"
-"Include_Insert" "Include_Insert" "Include_insert"
+"Include_Append" "Include_Append" "Include_append" "include_append"
+"Include_Insert" "Include_Insert" "Include_insert" "include_insert"
 "IniVar" "Inivar" "inivar"
 "IsFatalError" "Isfatalerror" "isfatalerror"
 "KillTask" "Killtask" "killtask"

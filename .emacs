@@ -181,7 +181,6 @@
 (global-linum-mode t))
 ;Nlinum claims to be more efficient
 
-
 ;; Hightlight current line and colum
 (global-hl-line-mode t)
 (eval-after-load 'global-hl-line-mode
@@ -321,15 +320,6 @@
 ;; ,----
 ;; | Hooks
 ;; `----
-(eval-after-load 'python-mode
-(if (>= emacs-major-version 24)
-(add-hook 'python-mode-hook
-	  (lambda ()
-	    (define-key python-mode-map "\"" 'electric-pair)
-	    (define-key python-mode-map "\'" 'electric-pair)
-	    (define-key python-mode-map "(" 'electric-pair)
-	    (define-key python-mode-map "[" 'electric-pair)
-	    (define-key python-mode-map "{" 'electric-pair)))))
 
 ;; ,----
 ;; | Auto-Byte-Compile

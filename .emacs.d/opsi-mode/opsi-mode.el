@@ -267,6 +267,7 @@
 "SysNative" "Sysnative" "sysnative"
 "Timeout" "timeout"
 "WaitForProcessEnding" "Waitforprocessending" "waitforprocessending"
+"TimeOutSeconds" "Timeoutseconds" "timeoutseconds"
 ))
 
 ;; []

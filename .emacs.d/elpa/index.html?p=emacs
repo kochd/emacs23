@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 1.7.10.4, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 1.7.10.4 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="gitweb/1.7.10.4 git/1.7.10.4"/>
+<meta name="robots" content="index, nofollow"/>
+<title>triple6.org Git - emacs/summary</title>
+<link rel="stylesheet" type="text/css" href="static/gitweb.css"/>
+<link rel="alternate" title="emacs - log - RSS feed" href="/gitweb/?p=emacs;a=rss" type="application/rss+xml" />
+<link rel="alternate" title="emacs - log - RSS feed (no merges)" href="/gitweb/?p=emacs;a=rss;opt=--no-merges" type="application/rss+xml" />
+<link rel="alternate" title="emacs - log - Atom feed" href="/gitweb/?p=emacs;a=atom;opt=--no-merges" type="application/atom+xml" />
+<link rel="alternate" title="emacs - log - Atom feed (no merges)" href="/gitweb/?p=emacs;a=atom;opt=--no-merges" type="application/atom+xml" />
+<link rel="shortcut icon" href="static/git-favicon.png" type="image/png" />
+</head>
+<body>
+<div class="page_header">
+<a title="git homepage" href="http://git-scm.com/"><img class="logo" height="27" src="static/git-logo.png" alt="git" width="72" /></a><a href="/gitweb/">projects</a> / <a href="/gitweb/?p=emacs;a=summary">emacs</a> / summary
+</div>
+<form method="get" action="/gitweb/" enctype="application/x-www-form-urlencoded">
+<div class="search">
+<input name="p" type="hidden" value="emacs" />
+<input name="a" type="hidden" value="search" />
+<input name="h" type="hidden" value="HEAD" />
+<select name="st" >
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select><sup><a href="/gitweb/?p=emacs;a=search_help">?</a></sup> search:
+<input type="text" name="s"  />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_nav">
+summary | <a href="/gitweb/?p=emacs;a=shortlog">shortlog</a> | <a href="/gitweb/?p=emacs;a=log">log</a> | <a href="/gitweb/?p=emacs;a=commit;h=fc6cf2ba0a8992e8412047d85cd55d0a9cbadd10">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=fc6cf2ba0a8992e8412047d85cd55d0a9cbadd10">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree">tree</a><br/>
+<br/>
+</div>
+<div class="title">&nbsp;</div>
+<table class="projects_list">
+<tr id="metadata_desc"><td>description</td><td>Unnamed repository; edit this file 'description' to name the repository.</td></tr>
+<tr id="metadata_owner"><td>owner</td><td>root</td></tr>
+<tr id="metadata_lchange"><td>last change</td><td><span class="datetime">Thu, 7 Nov 2013 19:47:37 +0000</span> (20:47 +0100)</td></tr>
+</table>
+<div class="header">
+<a class="title" href="/gitweb/?p=emacs;a=shortlog">shortlog</a>
+</div>
+<table class="shortlog">
+<tr class="dark">
+<td title="2013-11-07"><i>11 hours ago</i></td>
+<td class="author"><a title="Search for commits authored by Daniel Koch" class="list" href="/gitweb/?p=emacs;a=search;s=Daniel+Koch;st=author">Daniel Koch</a></td><td><a class="list subject" href="/gitweb/?p=emacs;a=commit;h=fc6cf2ba0a8992e8412047d85cd55d0a9cbadd10">added marmalede repo</a> <span class="refs"> <span class="head" title="heads/master"><a href="/gitweb/?p=emacs;a=shortlog;h=refs/heads/master">master</a></span></span></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=commit;h=fc6cf2ba0a8992e8412047d85cd55d0a9cbadd10">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=fc6cf2ba0a8992e8412047d85cd55d0a9cbadd10">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree;h=fc6cf2ba0a8992e8412047d85cd55d0a9cbadd10;hb=fc6cf2ba0a8992e8412047d85cd55d0a9cbadd10">tree</a> | <a title="in format: tar.gz" href="/gitweb/?p=emacs;a=snapshot;h=fc6cf2ba0a8992e8412047d85cd55d0a9cbadd10;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2013-11-07"><i>11 hours ago</i></td>
+<td class="author"><a title="Search for commits authored by Daniel Koch" class="list" href="/gitweb/?p=emacs;a=search;s=Daniel+Koch;st=author">Daniel Koch</a></td><td><a class="list subject" href="/gitweb/?p=emacs;a=commit;h=7d369121682d28c336fb443a0da4e534cf4f8257">emacs: Update / Ready for Emacs 24</a></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=commit;h=7d369121682d28c336fb443a0da4e534cf4f8257">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=7d369121682d28c336fb443a0da4e534cf4f8257">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree;h=7d369121682d28c336fb443a0da4e534cf4f8257;hb=7d369121682d28c336fb443a0da4e534cf4f8257">tree</a> | <a title="in format: tar.gz" href="/gitweb/?p=emacs;a=snapshot;h=7d369121682d28c336fb443a0da4e534cf4f8257;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="dark">
+<td title="2013-11-07"><i>12 hours ago</i></td>
+<td class="author"><a title="Search for commits authored by Daniel Koch" class="list" href="/gitweb/?p=emacs;a=search;s=Daniel+Koch;st=author">Daniel Koch</a></td><td><a class="list subject" title="added auto-dim-other-buffers and neu keybinding for other-window (C-tab)" href="/gitweb/?p=emacs;a=commit;h=707c17ecf1bf873cff4c41c739aab430376d1eb2">added auto-dim-other-buffers and neu keybinding for... </a></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=commit;h=707c17ecf1bf873cff4c41c739aab430376d1eb2">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=707c17ecf1bf873cff4c41c739aab430376d1eb2">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree;h=707c17ecf1bf873cff4c41c739aab430376d1eb2;hb=707c17ecf1bf873cff4c41c739aab430376d1eb2">tree</a> | <a title="in format: tar.gz" href="/gitweb/?p=emacs;a=snapshot;h=707c17ecf1bf873cff4c41c739aab430376d1eb2;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2013-11-07"><i>13 hours ago</i></td>
+<td class="author"><a title="Search for commits authored by Daniel Koch" class="list" href="/gitweb/?p=emacs;a=search;s=Daniel+Koch;st=author">Daniel Koch</a></td><td><a class="list subject" href="/gitweb/?p=emacs;a=commit;h=72a208069cd1d1992d691f33b5feb8374417eccf">emacs:flx-ido and smartparens:</a></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=commit;h=72a208069cd1d1992d691f33b5feb8374417eccf">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=72a208069cd1d1992d691f33b5feb8374417eccf">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree;h=72a208069cd1d1992d691f33b5feb8374417eccf;hb=72a208069cd1d1992d691f33b5feb8374417eccf">tree</a> | <a title="in format: tar.gz" href="/gitweb/?p=emacs;a=snapshot;h=72a208069cd1d1992d691f33b5feb8374417eccf;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="dark">
+<td title="2 months ago"><i>2013-09-03</i></td>
+<td class="author"><a title="Search for commits authored by Daniel Koch" class="list" href="/gitweb/?p=emacs;a=search;s=Daniel+Koch;st=author">Daniel Koch</a></td><td><a class="list subject" href="/gitweb/?p=emacs;a=commit;h=6c7cfe9bce3836d9546d8638969e9a23b8548f3a">added php+-mode and php-auto-yasnippet</a></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=commit;h=6c7cfe9bce3836d9546d8638969e9a23b8548f3a">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=6c7cfe9bce3836d9546d8638969e9a23b8548f3a">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree;h=6c7cfe9bce3836d9546d8638969e9a23b8548f3a;hb=6c7cfe9bce3836d9546d8638969e9a23b8548f3a">tree</a> | <a title="in format: tar.gz" href="/gitweb/?p=emacs;a=snapshot;h=6c7cfe9bce3836d9546d8638969e9a23b8548f3a;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2 months ago"><i>2013-09-03</i></td>
+<td class="author"><a title="Search for commits authored by Daniel Koch" class="list" href="/gitweb/?p=emacs;a=search;s=Daniel+Koch;st=author">Daniel Koch</a></td><td><a class="list subject" href="/gitweb/?p=emacs;a=commit;h=b9a51ec9c1f495b37bbea283f7cb02fdee213608">optimized some colors</a></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=commit;h=b9a51ec9c1f495b37bbea283f7cb02fdee213608">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=b9a51ec9c1f495b37bbea283f7cb02fdee213608">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree;h=b9a51ec9c1f495b37bbea283f7cb02fdee213608;hb=b9a51ec9c1f495b37bbea283f7cb02fdee213608">tree</a> | <a title="in format: tar.gz" href="/gitweb/?p=emacs;a=snapshot;h=b9a51ec9c1f495b37bbea283f7cb02fdee213608;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="dark">
+<td title="2 months ago"><i>2013-08-29</i></td>
+<td class="author"><a title="Search for commits authored by dkoch" class="list" href="/gitweb/?p=emacs;a=search;s=dkoch;st=author">dkoch</a></td><td><a class="list subject" href="/gitweb/?p=emacs;a=commit;h=a64e1b03f8e99e627ec6937acbd0e3e97d567c8b">added evaluation for org-babel within the buffer</a></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=commit;h=a64e1b03f8e99e627ec6937acbd0e3e97d567c8b">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=a64e1b03f8e99e627ec6937acbd0e3e97d567c8b">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree;h=a64e1b03f8e99e627ec6937acbd0e3e97d567c8b;hb=a64e1b03f8e99e627ec6937acbd0e3e97d567c8b">tree</a> | <a title="in format: tar.gz" href="/gitweb/?p=emacs;a=snapshot;h=a64e1b03f8e99e627ec6937acbd0e3e97d567c8b;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2 months ago"><i>2013-08-28</i></td>
+<td class="author"><a title="Search for commits authored by Daniel Koch" class="list" href="/gitweb/?p=emacs;a=search;s=Daniel+Koch;st=author">Daniel Koch</a></td><td><a class="list subject" href="/gitweb/?p=emacs;a=commit;h=aa88f8fbec323d9c57dcae758a851c966fe0715c">disabled company, disabled unknown function</a></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=commit;h=aa88f8fbec323d9c57dcae758a851c966fe0715c">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=aa88f8fbec323d9c57dcae758a851c966fe0715c">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree;h=aa88f8fbec323d9c57dcae758a851c966fe0715c;hb=aa88f8fbec323d9c57dcae758a851c966fe0715c">tree</a> | <a title="in format: tar.gz" href="/gitweb/?p=emacs;a=snapshot;h=aa88f8fbec323d9c57dcae758a851c966fe0715c;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="dark">
+<td title="2 months ago"><i>2013-08-28</i></td>
+<td class="author"><a title="Search for commits authored by Daniel Koch" class="list" href="/gitweb/?p=emacs;a=search;s=Daniel+Koch;st=author">Daniel Koch</a></td><td><a class="list subject" href="/gitweb/?p=emacs;a=commit;h=0814ce23cbafeb542a2bc3686979be9d98a9f05c">added ace-jump</a></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=commit;h=0814ce23cbafeb542a2bc3686979be9d98a9f05c">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=0814ce23cbafeb542a2bc3686979be9d98a9f05c">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree;h=0814ce23cbafeb542a2bc3686979be9d98a9f05c;hb=0814ce23cbafeb542a2bc3686979be9d98a9f05c">tree</a> | <a title="in format: tar.gz" href="/gitweb/?p=emacs;a=snapshot;h=0814ce23cbafeb542a2bc3686979be9d98a9f05c;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2 months ago"><i>2013-08-28</i></td>
+<td class="author"><a title="Search for commits authored by Daniel Koch" class="list" href="/gitweb/?p=emacs;a=search;s=Daniel+Koch;st=author">Daniel Koch</a></td><td><a class="list subject" href="/gitweb/?p=emacs;a=commit;h=c7ffc1182832dd7df7efd60d0c12861e27323467">resize buffer keys</a></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=commit;h=c7ffc1182832dd7df7efd60d0c12861e27323467">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=c7ffc1182832dd7df7efd60d0c12861e27323467">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree;h=c7ffc1182832dd7df7efd60d0c12861e27323467;hb=c7ffc1182832dd7df7efd60d0c12861e27323467">tree</a> | <a title="in format: tar.gz" href="/gitweb/?p=emacs;a=snapshot;h=c7ffc1182832dd7df7efd60d0c12861e27323467;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="dark">
+<td title="2 months ago"><i>2013-08-26</i></td>
+<td class="author"><a title="Search for commits authored by dkoch" class="list" href="/gitweb/?p=emacs;a=search;s=dkoch;st=author">dkoch</a></td><td><a class="list subject" href="/gitweb/?p=emacs;a=commit;h=d8b5cb682e612e3084277755a02a169abe32344f">changed comment-dwin keybinding</a></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=commit;h=d8b5cb682e612e3084277755a02a169abe32344f">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=d8b5cb682e612e3084277755a02a169abe32344f">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree;h=d8b5cb682e612e3084277755a02a169abe32344f;hb=d8b5cb682e612e3084277755a02a169abe32344f">tree</a> | <a title="in format: tar.gz" href="/gitweb/?p=emacs;a=snapshot;h=d8b5cb682e612e3084277755a02a169abe32344f;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2 months ago"><i>2013-08-26</i></td>
+<td class="author"><a title="Search for commits authored by dkoch" class="list" href="/gitweb/?p=emacs;a=search;s=dkoch;st=author">dkoch</a></td><td><a class="list subject" href="/gitweb/?p=emacs;a=commit;h=c3c8e9b20a24df869d4934e2932bf0a79273e961">added org</a></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=commit;h=c3c8e9b20a24df869d4934e2932bf0a79273e961">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=c3c8e9b20a24df869d4934e2932bf0a79273e961">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree;h=c3c8e9b20a24df869d4934e2932bf0a79273e961;hb=c3c8e9b20a24df869d4934e2932bf0a79273e961">tree</a> | <a title="in format: tar.gz" href="/gitweb/?p=emacs;a=snapshot;h=c3c8e9b20a24df869d4934e2932bf0a79273e961;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="dark">
+<td title="2 months ago"><i>2013-08-12</i></td>
+<td class="author"><a title="Search for commits authored by Daniel Koch" class="list" href="/gitweb/?p=emacs;a=search;s=Daniel+Koch;st=author">Daniel Koch</a></td><td><a class="list subject" href="/gitweb/?p=emacs;a=commit;h=60c9344cfa8692ac91a85c4cc9916339f37c1df4">init</a></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=commit;h=60c9344cfa8692ac91a85c4cc9916339f37c1df4">commit</a> | <a href="/gitweb/?p=emacs;a=commitdiff;h=60c9344cfa8692ac91a85c4cc9916339f37c1df4">commitdiff</a> | <a href="/gitweb/?p=emacs;a=tree;h=60c9344cfa8692ac91a85c4cc9916339f37c1df4;hb=60c9344cfa8692ac91a85c4cc9916339f37c1df4">tree</a> | <a title="in format: tar.gz" href="/gitweb/?p=emacs;a=snapshot;h=60c9344cfa8692ac91a85c4cc9916339f37c1df4;sf=tgz">snapshot</a></td>
+</tr>
+</table>
+<div class="header">
+<a class="title" href="/gitweb/?p=emacs;a=heads">heads</a>
+</div>
+<table class="heads">
+<tr class="dark">
+<td><i>11 hours ago</i></td>
+<td class="current_head"><a class="list name" href="/gitweb/?p=emacs;a=shortlog;h=refs/heads/master">master</a></td>
+<td class="link"><a href="/gitweb/?p=emacs;a=shortlog;h=refs/heads/master">shortlog</a> | <a href="/gitweb/?p=emacs;a=log;h=refs/heads/master">log</a> | <a href="/gitweb/?p=emacs;a=tree;h=refs/heads/master;hb=refs/heads/master">tree</a></td>
+</tr></table>
+<div class="page_footer">
+<div class="page_footer_text">Unnamed repository; edit this file 'description' to name the repository.</div>
+<a class="rss_logo" title="log RSS feed" href="/gitweb/?p=emacs;a=rss">RSS</a>
+<a class="rss_logo" title="log Atom feed" href="/gitweb/?p=emacs;a=atom">Atom</a>
+</div>
+<script type="text/javascript" src="static/gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>

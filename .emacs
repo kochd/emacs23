@@ -289,6 +289,11 @@
 (global-set-key (kbd "M-_") 'redo)
 (setq undo-no-redo t)
 
+;; Eldoc
+(add-hook 'emacs-lisp-mode-hook
+	  '(lambda ()
+	     (eldoc-mode t)))
+
 ;; ,----
 ;; |X-Clipboard Integration
 ;; `----

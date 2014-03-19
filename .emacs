@@ -117,9 +117,10 @@
 	  (yas-global-mode t)
 )
 
-;Auto-Complete
-(auto-complete t)
-(global-auto-complete-mode t)
+;Auto-Complete / Company
+;(auto-complete t)
+;(global-auto-complete-mode t)
+(global-company-mode t)
 
 ; Smart-Tab
 (smart-tab-mode t)

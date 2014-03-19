@@ -340,6 +340,15 @@
 
 (add-hook 'after-save-hook 'byte-compile-current-buffer)
 
+
+;; ,----
+;; | auto-compile
+;; `----
+;; Compiles a lisp source when it is loaded
+(auto-compile-on-save-mode t)
+(auto-compile-on-load-mode t)
+
+
 ;; ,----
 ;; | Recompile .emacs.d every start
 ;; `----

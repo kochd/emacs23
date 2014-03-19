@@ -199,8 +199,10 @@
 (ido-mode t)
 (flx-ido-mode t)
 ;;(ido-vertical-mode t)
+(if (>= emacs-major-version 24)
+(progn
 (smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-x") 'smex)))
 
 ;; Move mouse out of the screen when typing
 (mouse-avoidance-mode 'banish)

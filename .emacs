@@ -120,6 +120,7 @@
 ;Auto-Complete / Company
 (auto-complete t)
 (global-auto-complete-mode t)
+(add-to-list 'ac-modes 'opsi-mode)
 
 ; Smart-Tab
 (smart-tab-mode t)
@@ -327,6 +328,12 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
+
+(add-hook 'opsi-mode-hook
+	  (lambda ()
+	    (setq ac-sources '(ac-source-opsi ac-source-words-in-same-mode-buffers))))
+
+
 ;; ,----
 ;; | Auto-Byte-Compile
 ;; `----
@@ -346,7 +353,6 @@
 ;; Compiles a lisp source when it is loaded
 (auto-compile-on-save-mode t)
 (auto-compile-on-load-mode t)
-
 
 ;; ,----
 ;; | Recompile .emacs.d every start

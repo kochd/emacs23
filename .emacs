@@ -126,7 +126,7 @@
       (add-hook 'python-mode-hook 'company-jedi-start)
       (setq company-jedi-python-bin "python")
 					;The CAPF back-end, which has to be enabled manually on Emacs versions <24.4, provides a bridge to the standard completion-at-point-functions facility, and thus works with any major mode that defines a proper completion function.
-      (add-to-list 'company-backends 'CAPF)
+      (add-to-list 'company-backends 'company-capf)
 					;Color
       (require 'color)
       (let ((bg (face-attribute 'default :background)))

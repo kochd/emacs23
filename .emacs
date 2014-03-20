@@ -324,6 +324,8 @@
 ;; ,----
 ;; | Hooks
 ;; `----
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
 
 ;; ,----
 ;; | Auto-Byte-Compile

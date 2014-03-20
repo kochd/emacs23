@@ -173,8 +173,8 @@
 (tool-bar-mode -1)
 
 ;; No Scrollbar
-(if (>= emacs-major-version 24)
-(scroll-bar-mode -1))
+(if window-system
+    (scroll-bar-mode -1))
 
 ;; No Startup screen
 (setq inhibit-startup-message t)

@@ -118,27 +118,8 @@
 )
 
 ;Auto-Complete / Company
-(if (>= emacs-major-version 24)
-    (progn
-      (global-company-mode t)
-					;Jedi backend
-      (add-to-list 'company-backends 'company-jedi)
-      (add-hook 'python-mode-hook 'company-jedi-start)
-      (setq company-jedi-python-bin "python")
-					;The CAPF back-end, which has to be enabled manually on Emacs versions <24.4, provides a bridge to the standard completion-at-point-functions facility, and thus works with any major mode that defines a proper completion function.
-      (add-to-list 'company-backends 'company-capf)
-					;Color
-      (require 'color)
-      (let ((bg (face-attribute 'default :background)))
-	(custom-set-faces
-	 `(company-tooltip ((t (:inherit default :background ,(color-lighten-name bg 2)))))
-	 `(company-scrollbar-bg ((t (:background ,(color-lighten-name bg 5)))))
-	 `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 10)))))
-	 `(company-tooltip-selection ((t (:inherit font-lock-function-name-face))))
-	 `(company-tooltip-common ((t (:inherit font-lock-constant-face)))))))
-  (progn
-    (auto-complete t)
-    (global-auto-complete-mode t)))
+(auto-complete t)
+(global-auto-complete-mode t)
 
 ; Smart-Tab
 (smart-tab-mode t)

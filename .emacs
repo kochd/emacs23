@@ -120,7 +120,13 @@
 ;Auto-Complete / Company
 (auto-complete t)
 (global-auto-complete-mode t)
-(add-to-list 'ac-modes 'opsi-mode)
+(eval-after-load 'auto-complete
+  (progn
+    (add-to-list 'ac-modes 'opsi-mode)
+    (setq ac-delay 0.01)
+    (set-face-attribute 'ac-candidate-face nil   :background "grey16" :foreground "light gray")
+    (set-face-attribute 'ac-selection-face nil   :background "#AA1035" :foreground "light gray")))
+;    (set-face-attribute 'popup-tip-face    nil   :background "#003A4E" :foreground "light gray")
 
 ; Smart-Tab
 (smart-tab-mode t)

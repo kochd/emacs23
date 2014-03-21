@@ -6,3 +6,4 @@ saveplace-save
 elpa/archives/
 ac-comphist.dat
 .#*
+.emacs.d./tramp

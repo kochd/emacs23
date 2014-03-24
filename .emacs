@@ -183,9 +183,9 @@
 (icomplete-mode t)
 
 ;; Show linenumbers on the left
-(if (>= emacs-major-version 24)
-(global-nlinum-mode t)
-(global-linum-mode t))
+;(if (>= emacs-major-version 24)
+;(global-nlinum-mode t)
+;(global-linum-mode t))
 ;Nlinum claims to be more efficient
 
 ;; Hightlight current line and colum

@@ -7,3 +7,4 @@ elpa/archives/
 ac-comphist.dat
 .#*
 .emacs.d./tramp
+.emacs.d/.python-environments/

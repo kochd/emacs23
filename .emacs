@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; add to your /etc/bash.bashrc: ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+(setq warning-minimum-level :error)
 ;(server-start)
 
 ;export TERM=xterm-256color
@@ -389,5 +389,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-(delete-window)
